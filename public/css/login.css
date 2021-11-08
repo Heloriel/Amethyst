@@ -1,0 +1,25 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    background: url("../img/login-page-bg.jpg") no-repeat center;
+    background-size: cover;
+}
+
+#logo{
+    width: 250px;
+    margin-bottom: 1rem;
+}
+
+.row{
+    min-height: 50vh;
+}
+
+.form-container{
+    height: 25vh;
+}
+
+.form-container input{
+    border-radius: 0px;
+    padding: .7rem;
+}
+
