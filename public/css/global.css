@@ -6,11 +6,6 @@
     box-sizing: border-box;
 }
 
-.sidebar{
-    background: #2C2C2C;
-    min-height: calc(100vh - 2.93rem);
-}
-
 .navbar{
     padding-top: .2rem !important;
     padding-bottom: .2rem !important;
@@ -52,5 +47,26 @@
 
 .last-block{
     align-items: baseline;
-    height: 75%;
+    height: 60%;
+}
+
+.body-content-area{
+    min-height: calc(100vh - 2.93rem);
+    min-height: -o-calc(100vh - 2.93rem); /* opera */
+    min-height: -webkit-calc(100vh - 2.93rem); /* google, safari */
+    min-height: -moz-calc(100vh - 2.93rem); /* firefox */
+}
+
+.sidebar ion-icon{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.sidebar li{
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+
+.sidebar li:hover{
+    background-color: gray;    
 }
