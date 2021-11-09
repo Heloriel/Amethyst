@@ -34,27 +34,26 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="nav-item header-end-point">
-                <div class="col-10">
-                    <form class="d-flex">
+                <div class="col-5"></div>
+                <div class="col-6">
+                    <form class="">
                         <div>
-                            <input class="form-control me-2 rounded-pill navbar-search" type="search"
-                                placeholder="PROCURAR..." aria-label="Search">
+                            <input class="form-control me-2 rounded-pill navbar-search" type="search" placeholder="PROCURAR..." aria-label="Search">
                         </div>
                     </form>
                 </div>
-                <div class="col-1">
+                <div class="col-1 d-flex" id="user-area">
                     <div class="dropdown dropdown-menu-left">
-                        <a href="" class="" href="#" role="button" id="dropdownNotify" data-bs-toggle="dropdown" aria-expanded="false">
-                            <ion-icon name="notifications-outline"></ion-icon>
+                        <a href="" class="" role="button" id="dropdownNotify" data-bs-toggle="dropdown" aria-expanded="false">
+                            <ion-icon name="notifications-outline" role="img" class="md hydrated" aria-label="notifications outline"></ion-icon>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownNotify">
                             <li></li>
                         </ul>
                     </div>
-                </div>
-                <div class="col-1">
                     <img src="img/Logo.svg" class="rounded-circle user-avatar" alt="Business Logo" width="35" height="35">
                 </div>
+
             </div>
         </div>
     </nav>
@@ -66,7 +65,7 @@
                     <div class="d-flex flex-column align-items-sm-start text-white body-content-area">
                         <ul class="nav nav-pills flex-column mb-sm-auto align-items-sm-start" id="menu">
                             <li class="sidemenu-item">
-                                <a href="#" class="nav-link align-middle text-white d-flex align-items-center">
+                                <a href="home" class="nav-link align-middle text-white d-flex align-items-center">
                                     <ion-icon name="home-outline"></ion-icon> <span class="me-1">HOME</span>
                                 </a>
                             </li>
@@ -76,7 +75,7 @@
                                 </a>
                             </li>
                             <li class="sidemenu-item">
-                                <a href="#" data-bs-toggle="collapse" class="nav-link align-middle text-white d-flex">
+                                <a href="new" class="nav-link align-middle text-white d-flex">
                                     <ion-icon name="add-circle-outline"></ion-icon> <span class="me-1">CADASTRAR</span>
                                 </a>
                             </li>

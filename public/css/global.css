@@ -36,7 +36,12 @@
 .header-end-point{
     display: flex;
     align-items: center;
-    width: 50vw;
+    width: 100%;
+}
+
+#user-area{
+    align-items: center;
+    justify-content: space-around;
 }
 
 .sb-main-row{
@@ -68,5 +73,5 @@
 }
 
 .sidebar li:hover{
-    background-color: gray;    
+    background-color: gray;
 }
