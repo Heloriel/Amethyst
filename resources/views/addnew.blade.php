@@ -1,25 +1,29 @@
 @extends('layouts.main')
 
 @section('header')
-<link rel="stylesheet" href="css/new.css">
+<link rel="stylesheet" href="css/addnew.css">
+<link rel="stylesheet" href="css/customInputs.css">
 @endsection
 
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-4 col-sm-12">
+        <div class="col-md-2 col-sm-12">
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">UASG</span>
                 <input type="text" class="form-control" placeholder="UASG" aria-label="Username" aria-describedby="basic-addon1">
             </div>
         </div>
-        <div class="col-md-8 col-sm-12">
+        <div class="col-md-10 col-sm-12">
             <div class="input-group mb-3">
-                <span class="input-group-text id="basic-addon1">NOME DO ORGÃO</span>
                 <input type="text" class="form-control" placeholder="NOME DO ORGÃO" aria-label="Username" aria-describedby="basic-addon1">
             </div>
         </div>
-        <div class="col-md-6 col-sm-12">
+        <div class="col-md-4 col-sm-12">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Nº DO PREGÃO" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
                 <div class="input-group mb-3">
                     <select class="form-select" id="inputGroupSelect01">
                       <option selected>Tipo da Disputa</option>
@@ -30,7 +34,7 @@
                     </select>
                   </div>
         </div>
-        <div class="col-md-6 col-sm-12">
+        <div class="col-md-4 col-sm-12">
                 <div class="input-group mb-3">
                     <select class="form-select" id="inputGroupSelect01">
                       <option selected>Portal</option>
@@ -43,12 +47,23 @@
         </div>
         <div class="col-md-6 col-sm-12">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="TBA" aria-label="Username" aria-describedby="basic-addon1" disabled>
+                <input type="text" id="datepicker" placeholder="{{ $today_date }}" class="form-control custom-datepicker">
             </div>
         </div>
         <div class="col-md-6 col-sm-12">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="TBA" aria-label="Username" aria-describedby="basic-addon1" disabled>
+                <input type="text" id="datepicker" placeholder="{{ $today_date }}" class="form-control custom-datepicker">
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <div class="input-group mb-3">
+                <textarea class="form-control" placeholder="OBSERVAÇÕES" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <div class="input-group mb-3">
+                <input type="text" id="hashtags" autocomplete="off" class="form-control">
+                <div class="tag-container"></div>
             </div>
         </div>
         <div class="col-12 d-flex justify-content-between">
@@ -57,4 +72,9 @@
         </div>
     </div>
 </div>
+@endsection
+
+
+@section("afterFooter")
+<script src="js/customInputs.js"></script>
 @endsection

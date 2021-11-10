@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Date;
 
 class AmethystCoreController extends Controller
 {
@@ -15,7 +16,10 @@ class AmethystCoreController extends Controller
     }
 
     public function addnew_view(){
-        return view('addnew');
+
+        $today = Date('d/m/Y');
+
+        return view('addnew', ['today_date' => $today]);
     }
 
 }
