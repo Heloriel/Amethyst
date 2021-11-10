@@ -75,7 +75,7 @@
                                 </a>
                             </li>
                             <li class="sidemenu-item">
-                                <a href="new" class="nav-link align-middle text-white d-flex">
+                                <a href="addnew" class="nav-link align-middle text-white d-flex">
                                     <ion-icon name="add-circle-outline"></ion-icon> <span class="me-1">CADASTRAR</span>
                                 </a>
                             </li>

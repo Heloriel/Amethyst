@@ -13,14 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-});
+use App\Http\Controllers\AmethystCoreController;
 
-Route::get('home', function () {
-    return view('home');
-});
+Route::get('/', [AmethystCoreController::class, 'index']);
 
-Route::get('new', function () {
-    return view('new');
-});
+Route::get('home', [AmethystCoreController::class, 'home_view']);
+
+Route::get('addnew', [AmethystCoreController::class, 'addnew_view']);
