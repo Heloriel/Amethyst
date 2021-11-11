@@ -88,7 +88,7 @@
         </div>
         <div class="col-md-12 col-sm-12 mb-4">
             <div class="" id="hashtags-container">
-                <input type="text" id="hashtags" autocomplete="off" class="form-control" placeholder="TAG's" maxlength="16">
+                <input type="text" id="hashtags" autocomplete="off" class="form-control" placeholder="TAG's" maxlength="25">
                 <div class="tag-container mt-3"></div>
             </div>
         </div>
