@@ -23,13 +23,17 @@
     color: var(--amethyst-light);
 }
 
+.notification-counter{
+    z-index: 9999;
+}
+
 .main-frame{
     background: #F2F2F2;
     padding-top: 2rem;
 }
 
 .user-avatar{
-    background: grey;
+    background: lightgrey;
     padding: .1rem;
 }
 
@@ -69,16 +73,15 @@
     min-height: -moz-calc(100vh - 2.93rem); /* firefox */
 }
 
+.sidebar{
+    height: calc(100vh - 2.93rem);
+}
+
+.sidebar a{
+    align-items: center;
+}
+
 .sidebar ion-icon{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-right: 1rem;
-}
-
-.sidebar li{
-    width: 100%;
-    border-bottom: 1px solid white;
-}
-
-.sidebar li:hover{
-    background-color: gray;
 }
