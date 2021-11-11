@@ -9,7 +9,7 @@
 
     {{-- Custom CSS --}}
     <link rel="stylesheet" href="css/global.css">
-    @yield('header')
+    @yield('css')
 
     {{-- ICONS --}}
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('header')
+@section('css')
 <link rel="stylesheet" href="css/addnew.css">
 <link rel="stylesheet" href="css/customInputs.css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">

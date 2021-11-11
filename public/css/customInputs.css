@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400');
 
-
 .wrapper {
   padding: 20px 28px;
   margin: 0;
@@ -47,10 +46,10 @@ input {
 .tag{
   pointer-events: none;
   background-color: none;
-  color: #BFA2DB;
+  color: var(--amethyst-dark);
   padding: 6px 8px;
   margin: 5px;
-  border: 1px solid #BFA2DB;
+  border: 1px solid var(--amethyst-dark);
   border-radius: 50px;
   font-family: 'Poppins', sans-serif;
 }
@@ -58,13 +57,13 @@ input {
 .tag::before {
   pointer-events: all;
   display: inline-block;
-  content: 'x';  
+  content: 'x';
   height: 20px;
   width: 20px;
   margin-right: 6px;
   text-align: center;
   color: #000;
-  background-color: #BFA2DB;
+  background-color: var(--amethyst-dark);
   cursor: pointer;
   border-radius: 50px;
   line-height: 1rem;

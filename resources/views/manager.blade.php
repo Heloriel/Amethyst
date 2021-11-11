@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('header')
+@section('css')
     <link rel="stylesheet" href="css/manager.css">
 @endsection
 

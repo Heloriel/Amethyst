@@ -1,6 +1,7 @@
 *{
 
-    --amethyst-light: #BFA2DB;
+    --amethyst-light: #F0D9FF;
+    --amethyst-dark: #BFA2DB;
 
     margin: 0;
     padding: 0;
@@ -20,7 +21,7 @@
 }
 
 #dropdownNotify{
-    color: var(--amethyst-light);
+    color: var(--amethyst-dark);
 }
 
 .notification-counter{
@@ -38,7 +39,7 @@
 }
 
 .navbar-search{
-    border: 1px solid var(--amethyst-light) !important;
+    border: 1px solid var(--amethyst-dark) !important;
     font-family: 'Poppins', sans-serif;
     font-size: .75rem !important;
     height: 2rem;
