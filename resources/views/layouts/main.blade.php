@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>PLACEHOLDER</title>
+    <title>{{ config('app.name') }} - @yield('title')</title>
 
     {{-- Custom CSS --}}
     <link rel="stylesheet" href="css/global.css">

@@ -18,8 +18,9 @@ class AmethystCoreController extends Controller
     public function addnew_view(){
 
         $today = Date('d/m/Y');
+        $now = Date('H:i');
 
-        return view('addnew', ['today_date' => $today]);
+        return view('addnew', ['today_date' => $today, 'time_now' => $now]);
     }
 
 }

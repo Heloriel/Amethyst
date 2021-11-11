@@ -1,4 +1,7 @@
 *{
+
+    --amethyst-light: #BFA2DB;
+
     margin: 0;
     padding: 0;
     border: none;
@@ -16,6 +19,10 @@
     font-size: 1.6rem;
 }
 
+#dropdownNotify{
+    color: var(--amethyst-light);
+}
+
 .main-frame{
     background: #F2F2F2;
     padding-top: 2rem;
@@ -27,7 +34,7 @@
 }
 
 .navbar-search{
-    border: 1px solid #BFA2DB !important;
+    border: 1px solid var(--amethyst-light) !important;
     font-family: 'Poppins', sans-serif;
     font-size: .75rem !important;
     height: 2rem;

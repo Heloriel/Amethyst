@@ -46,10 +46,13 @@ input {
 
 .tag{
   pointer-events: none;
-  background-color: #242424;
-  color: white;
-  padding: 6px;
+  background-color: none;
+  color: #BFA2DB;
+  padding: 6px 8px;
   margin: 5px;
+  border: 1px solid #BFA2DB;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .tag::before {
@@ -60,7 +63,15 @@ input {
   width: 20px;
   margin-right: 6px;
   text-align: center;
-  color: #ccc;
-  background-color: #111;
+  color: #000;
+  background-color: #BFA2DB;
   cursor: pointer;
+  border-radius: 50px;
+  line-height: 1rem;
+  padding-top: 1px;
+  font-weight: bold;
+}
+
+.tag:hover::before{
+  background-color: red;
 }
