@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="css/home.css">
 @endsection
 
+@section('title' , 'Início')
+
 @section('content')
 
 

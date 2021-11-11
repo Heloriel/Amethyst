@@ -19,4 +19,6 @@ Route::get('/', [AmethystCoreController::class, 'index']);
 
 Route::get('home', [AmethystCoreController::class, 'home_view']);
 
+Route::get('manager', [AmethystCoreController::class, 'manager_view']);
+
 Route::get('addnew', [AmethystCoreController::class, 'addnew_view']);
