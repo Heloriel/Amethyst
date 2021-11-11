@@ -69,21 +69,21 @@
                 <div class="d-none d-sm-flex flex-column flex-shrink-0 p-3 bg-light sidebar" style="width: 250px;" >
                     <ul class="nav nav-pills flex-column mb-auto">
                       <li class="nav-item">
-                        <a href="/home" class="nav-link active d-flex" aria-current="page">
+                        <a href="/home" class="nav-link {{ request()->is('home') ? 'active' : '' }} d-flex link-dark">
                           <ion-icon name="home-outline"></ion-icon> <span class="me-1">
-                          Home
+                          HOME
                         </a>
                       </li>
                       <li>
-                        <a href="/" class="nav-link link-dark d-flex">
+                        <a href="/manager" class="nav-link {{ (request()->is('manager')) ? 'active' : '' }} link-dark d-flex">
                           <ion-icon name="create-outline"></ion-icon> <span class="me-1">
-                          Dashboard
+                          GERENCIAR
                         </a>
                       </li>
                       <li>
-                        <a href="/addnew" class="nav-link link-dark d-flex">
+                        <a href="/addnew" class="nav-link {{ (request()->is('addnew')) ? 'active' : '' }} link-dark d-flex">
                           <ion-icon name="add-circle-outline"></ion-icon>
-                          Orders
+                          ADICIONAR
                         </a>
                       </li>
                     </ul>
@@ -91,7 +91,7 @@
                     <div class="dropdown">
                       <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="img/Logo.svg" alt="" width="32" height="32" class="rounded-circle me-2 user-avatar">
-                        <strong>mdo</strong>
+                        <strong>Scriplex</strong>
                       </a>
                       <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
                         <li><a class="dropdown-item" href="#">New project...</a></li>

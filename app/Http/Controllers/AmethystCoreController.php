@@ -15,6 +15,10 @@ class AmethystCoreController extends Controller
         return view('home');
     }
 
+    public function manager_view(){
+        return view('manager');
+    }
+
     public function addnew_view(){
 
         $today = Date('d/m/Y');
