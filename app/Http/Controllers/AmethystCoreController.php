@@ -7,6 +7,15 @@ use Illuminate\Support\Facades\Date;
 
 class AmethystCoreController extends Controller
 {
+
+    private $today;
+    private $now;
+
+    public function __construct(){
+        $this->today = Date('d/m/Y');
+        $this->now = Date('H:i');
+    }
+
     public function index(){
         return view('login');
     }
@@ -16,15 +25,11 @@ class AmethystCoreController extends Controller
     }
 
     public function manager_view(){
-        return view('manager');
+        return view('manager', ['today_date' => $this->today, 'time_now' => $this->now]);
     }
 
-    public function addnew_view(){
-
-        $today = Date('d/m/Y');
-        $now = Date('H:i');
-
-        return view('addnew', ['today_date' => $today, 'time_now' => $now]);
+    public function addnew_view(){        
+        return view('addnew', ['today_date' => $this->today, 'time_now' => $this->now]);
     }
 
 }

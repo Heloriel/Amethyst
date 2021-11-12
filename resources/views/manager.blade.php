@@ -11,7 +11,7 @@
 <div class="container-fluid">
 
 
-<table class="table align-middle">
+<table class="table align-middle table-hover table-sm">
     <thead>
       <tr>
         <th scope="col">Pregão</th>
@@ -53,11 +53,11 @@
             <button class="btn btn-danger btn-sm"><ion-icon name="trash-outline"></ion-icon></button>
         </td>
       </tr>
-      <tr>
+      <tr class="table-danger">
         <th scope="row">132/2022</th>
         <td>789123</td>
         <td>Licitações-e</td>
-        <td>10/12/2022 - 10:30</td>
+        <td>{{ $today_date }} - {{ $time_now }}</td>
         <td>
             <span class="badge p-2 bg-secondary rounded-circle" title="Aguardando Disputa">
                 <span class="visually-hidden">Aguardando Disputa</span>
