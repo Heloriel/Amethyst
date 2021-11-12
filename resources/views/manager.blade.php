@@ -11,7 +11,7 @@
 <div class="container-fluid">
 
 
-<table class="table align-middle table-hover table-sm">
+<table class="table align-middle table-hover table-sm table-responsive">
     <thead>
       <tr>
         <th scope="col">Pregão</th>

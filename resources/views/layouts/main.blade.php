@@ -38,13 +38,6 @@
             </button>
             <div class="nav-item header-end-point">
                 <div class="col-7"></div>
-                <div class="col-4">
-                    <form class="">
-                        <div>
-                            <input class="form-control me-2 rounded-pill navbar-search" type="search" placeholder="PROCURAR..." aria-label="Search">
-                        </div>
-                    </form>
-                </div>
                 <div class="col-1 d-flex" id="user-area">
                     <div class="dropdown dropdown-menu-left">
                         <a href="" class="" role="button" id="dropdownNotify" data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,9 +47,16 @@
                             <ion-icon name="notifications-outline" role="img" class="md hydrated" aria-label="notifications outline"></ion-icon>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownNotify">
-                            <li></li>
+                            <li><a href="#">NOTIFICAÇÃO 1</a></li>
                         </ul>
                     </div>
+                </div>
+                <div class="col-4">
+                    <form class="">
+                        <div>
+                            <input class="form-control me-2 rounded-pill navbar-search" type="search" placeholder="PROCURAR NO SISTEMA ..." aria-label="Search">
+                        </div>
+                    </form>
                 </div>
 
             </div>
@@ -66,40 +66,42 @@
     <main>
         <div class="container-fluid">
             <div class="row flex-nowrap">
-                <div class="d-none d-sm-flex flex-column flex-shrink-0 p-3 bg-light sidebar" style="width: 250px;" >
+                <div class="d-none d-md-flex flex-column flex-shrink-0 p-0 bg-light sidebar" style="width: 250px;" >
                     <ul class="nav nav-pills flex-column mb-auto">
                       <li class="nav-item">
-                        <a href="/home" class="nav-link {{ request()->is('home') ? 'active' : '' }} d-flex link-dark">
+                        <a href="/home" class="nav-link rounded-0 {{ request()->is('home') ? 'active' : '' }} d-flex link-dark">
                           <ion-icon name="home-outline"></ion-icon> <span class="me-1">
                           HOME
                         </a>
                       </li>
                       <li>
-                        <a href="/manager" class="nav-link {{ (request()->is('manager')) ? 'active' : '' }} link-dark d-flex">
+                        <a href="/manager" class="nav-link rounded-0 {{ (request()->is('manager')) ? 'active' : '' }} link-dark d-flex">
                           <ion-icon name="create-outline"></ion-icon> <span class="me-1">
                           GERENCIAR
                         </a>
                       </li>
                       <li>
-                        <a href="/addnew" class="nav-link {{ (request()->is('addnew')) ? 'active' : '' }} link-dark d-flex">
+                        <a href="/addnew" class="nav-link rounded-0 {{ (request()->is('addnew')) ? 'active' : '' }} link-dark d-flex">
                           <ion-icon name="add-circle-outline"></ion-icon>
                           ADICIONAR
                         </a>
                       </li>
                     </ul>
                     <hr>
-                    <div class="dropdown">
-                      <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="img/Logo.svg" alt="" width="32" height="32" class="rounded-circle me-2 user-avatar">
-                        <strong>Scriplex</strong>
-                      </a>
-                      <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
-                      </ul>
+                    <div class="nav-item pb-3 ps-3">
+                      <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="img/Logo.svg" alt="" width="32" height="32" class="rounded-circle me-2 user-avatar">
+                          <strong>Scriplex</strong>
+                        </a>
+                        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+                          <li><a class="dropdown-item" href="#">New project...</a></li>
+                          <li><a class="dropdown-item" href="#">Settings</a></li>
+                          <li><a class="dropdown-item" href="#">Profile</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
 
