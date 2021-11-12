@@ -17,19 +17,19 @@
         <div class="col-md-2 col-sm-12 mb-3">
             <div class="form-floating">
                 <input type="text" class="form-control" id="floatingInputUASG" name="uasg" autocomplete="off" placeholder="UASG" aria-label="UASG" aria-describedby="basic-addon1">
-                <label for="floatingInputUASG">UASG</label>
+                <label for="floatingInputUASG" style="color: #92999F;">UASG</label>
             </div>
         </div>
         <div class="col-md-3 col-sm-12 mb-3">
             <div class="form-floating">
                 <input type="text" class="form-control" id="floatingInputNPregao" name="numero_pregao" autocomplete="off" placeholder="Nº DO PREGÃO" aria-label="Número do Pregão">
-                <label for="floatingInputNPregao">N° DO PREGÃO</label>
+                <label for="floatingInputNPregao" style="color: #92999F;">N° DO PREGÃO</label>
             </div>
         </div>
         <div class="col-md-7 col-sm-12 mb-3">
             <div class="form-floating">
                 <input type="text" class="form-control" id="floatingInputNome" name="nome_do_orgao" autocomplete="off" placeholder="NOME DO ORGÃO" aria-label="Nome do Orgão">
-                <label for="floatingInputNome">NOME DO ORGÃO</label>
+                <label for="floatingInputNome" style="color: #92999F;">NOME DO ORGÃO</label>
             </div>
         </div>
         <div class="col-md-4 col-sm-12 mb-2">
@@ -89,6 +89,7 @@
         <div class="col-md-12 col-sm-12 mb-4">
             <div class="" id="hashtags-container">
                 <input type="text" id="hashtags" autocomplete="off" class="form-control" placeholder="TAG's" maxlength="25">
+                <p class="my-2">Digite a TAG e pressione <kbd>TAB</kbd> ou <kbd>ENTER</kbd> para inserir.</p>
                 <div class="tag-container mt-3"></div>
             </div>
         </div>

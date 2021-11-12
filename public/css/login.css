@@ -11,7 +11,7 @@ body{
 }
 
 .row{
-    min-height: 50vh;
+    min-height: 100vh;
 }
 
 .form-container{
@@ -23,3 +23,11 @@ body{
     padding: .7rem;
 }
 
+input::placeholder{
+    color: white !important;
+}
+
+input:focus {
+    border-color: var(--amethyst-dark) !important;
+    box-shadow: 0 0 0 0.25rem rgb(115, 32, 171 / 25%) !important;
+}

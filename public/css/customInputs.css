@@ -46,10 +46,10 @@ input {
 .tag{
   pointer-events: none;
   background-color: none;
-  color: var(--amethyst-dark);
+  color: #000;
   padding: 6px 8px;
   margin: 5px;
-  border: 1px solid var(--amethyst-dark);
+  border: 1px solid #000;
   border-radius: 50px;
   font-family: 'Poppins', sans-serif;
 }
@@ -62,8 +62,8 @@ input {
   width: 20px;
   margin-right: 6px;
   text-align: center;
-  color: #000;
-  background-color: var(--amethyst-dark);
+  color: #fff;
+  background-color: #000;
   cursor: pointer;
   border-radius: 50px;
   line-height: 1rem;
