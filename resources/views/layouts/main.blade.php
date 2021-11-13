@@ -74,17 +74,40 @@
                           HOME
                         </a>
                       </li>
-                      <li>
+                      <li class="nav-item">
                         <a href="/manager" class="nav-link rounded-0 {{ (request()->is('manager')) ? 'active' : '' }} link-dark d-flex">
                           <ion-icon name="create-outline"></ion-icon> <span class="me-1">
                           GERENCIAR
                         </a>
                       </li>
-                      <li>
-                        <a href="/addnew" class="nav-link rounded-0 {{ (request()->is('addnew')) ? 'active' : '' }} link-dark d-flex">
+                      <li class="nav-item">
+                        <a href="/create" class="nav-link rounded-0 {{ (request()->is('create')) ? 'active' : '' }} link-dark d-flex">
                           <ion-icon name="add-circle-outline"></ion-icon>
                           ADICIONAR
                         </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="#" class="nav-link rounded-0 {{ (request()->is('config')) ? 'active' : '' }} link-dark d-flex" data-bs-toggle="collapse" data-bs-target="#config-collapse" aria-expanded="true">
+                          <ion-icon name="settings-outline"></ion-icon>
+                          CONFIGURAÇÕES
+                        </a>
+                        <div class="collapse {{ (request()->is('config')) ? 'show' : '' }} submenu" id="config-collapse" style="">
+                            <ul class="btn-toggle-nav px-3 mt-1 list-unstyled small">
+                                <li class="nav-item rounded-pill small p-0 mb-1 {{ (request()->is('config')) ? 'bg-secondary link-light' : '' }}">
+                                    <a href="/config" class="nav-link p-1 rounded-0 {{ request()->is('config') ? 'text-white' : '' }} d-flex link-dark">
+                                      <ion-icon name="chevron-forward-outline"></ion-icon> <span class="me-1">
+                                      GERAL
+                                    </a>
+                                </li>
+                                <li class="nav-item rounded-pill small p-0 mb-1 {{ (request()->is('config/status')) ? 'bg-secondary link-light' : '' }}">
+                                    <a href="/config/status" class="nav-link p-1 rounded-0 {{ request()->is('config/status') ? 'text-white' : '' }} d-flex link-dark">
+                                      <ion-icon name="chevron-forward-outline"></ion-icon> <span class="me-1">
+                                      STATUS
+                                    </a>
+                                </li>
+                            </ul>
+                          </div>
                       </li>
                     </ul>
                     <hr>
@@ -95,11 +118,8 @@
                           <strong>Scriplex</strong>
                         </a>
                         <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                          <li><a class="dropdown-item" href="#">New project...</a></li>
-                          <li><a class="dropdown-item" href="#">Settings</a></li>
-                          <li><a class="dropdown-item" href="#">Profile</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">Sign out</a></li>
+                          <li><h6 class="dropdown-header">Menu</h6></li>
+                          <li><a class="dropdown-item" href="/">Sair</a></li>
                         </ul>
                       </div>
                     </div>
@@ -111,7 +131,7 @@
             </div>
         </div>
     </main>
-    
+
     {{-- JQUERY --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.13.0-rc.3/jquery-ui.min.js" integrity="sha256-R6eRO29lbCyPGfninb/kjIXeRjMOqY3VWPVk6gMhREk=" crossorigin="anonymous"></script>
@@ -121,7 +141,7 @@
 
     {{-- BOOTSTRAP JS --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>    
+    </script>
 
     @yield('afterFooter')
 

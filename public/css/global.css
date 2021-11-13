@@ -82,7 +82,17 @@
     align-items: center;
 }
 
+.sidebar a:hover{
+    background: rgb(153, 186, 235);
+    cursor: pointer;
+}
+
 .sidebar ion-icon{
     font-size: 1.2rem;
     margin-right: 1rem;
+}
+
+.submenu a:hover,
+.sidebar #dropdownUser2:hover{
+    background-color: transparent;
 }

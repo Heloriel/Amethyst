@@ -10,8 +10,8 @@
 
 @section('content')
 
-<form action="" method="get" id="addnew" >
-
+<form action="/create/save" method="post" id="addnew" >
+@csrf
 <div class="container">
     <div class="row">
         <div class="col-md-2 col-sm-12 mb-3">
@@ -22,19 +22,19 @@
         </div>
         <div class="col-md-3 col-sm-12 mb-3">
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInputNPregao" name="numero_pregao" autocomplete="off" placeholder="Nº DO PREGÃO" aria-label="Número do Pregão">
-                <label for="floatingInputNPregao" style="color: #92999F;">N° DO PREGÃO</label>
+                <input type="text" class="form-control" id="floatingInputNPregao" name="preg" autocomplete="off" placeholder="PREGÃO" aria-label="Número do Pregão">
+                <label for="floatingInputNPregao" style="color: #92999F;">PREGÃO</label>
             </div>
         </div>
         <div class="col-md-7 col-sm-12 mb-3">
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInputNome" name="nome_do_orgao" autocomplete="off" placeholder="NOME DO ORGÃO" aria-label="Nome do Orgão">
+                <input type="text" class="form-control" id="floatingInputNome" name="name" autocomplete="off" placeholder="NOME DO ORGÃO" aria-label="Nome do Orgão">
                 <label for="floatingInputNome" style="color: #92999F;">NOME DO ORGÃO</label>
             </div>
         </div>
         <div class="col-md-4 col-sm-12 mb-2">
                 <div class="form-floating">
-                    <select class="form-select" name="tipo" id="inputGroupSelect01">
+                    <select class="form-select" name="type" id="inputGroupSelect01">
                       <option value="1" selected>Pregão Eletrônico</option>
                       <option value="2">Convite</option>
                       <option value="3">Dispensa de Licitação</option>
@@ -73,12 +73,12 @@
         </div>
         <div class="col-md-6 col-sm-12 mb-4">
             <div class="input-group">
-                <input type="text" name="data_disputa" id="datepicker" placeholder="{{ $today_date }}" autocomplete="off" class="form-control custom-datepicker">
+                <input type="text" name="date" id="datepicker" placeholder="{{ $today_date }}" autocomplete="off" class="form-control custom-datepicker">
             </div>
         </div>
         <div class="col-md-6 col-sm-12 mb-4">
             <div class="input-group">
-                <input type="text" name="hora_disputa" id="timepicker" placeholder="{{ $time_now }}" autocomplete="off" class="form-control custom-datepicker">
+                <input type="text" name="time" id="timepicker" placeholder="{{ $time_now }}" autocomplete="off" class="form-control custom-datepicker">
             </div>
         </div>
         <div class="col-md-12 col-sm-12 mb-4">
@@ -88,7 +88,7 @@
         </div>
         <div class="col-md-12 col-sm-12 mb-4">
             <div class="" id="hashtags-container">
-                <input type="text" id="hashtags" autocomplete="off" class="form-control" placeholder="TAG's" maxlength="25">
+                <input type="text" id="hashtags" autocomplete="off" class="form-control" placeholder="TEMPORARY DISABLED" maxlength="25" disabled>
                 <p class="my-2">Digite a TAG e pressione <kbd>TAB</kbd> ou <kbd>ENTER</kbd> para inserir.</p>
                 <div class="tag-container mt-3"></div>
             </div>

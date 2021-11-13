@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="input-group mb-3">                    
+                <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Procurar no portal..." aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
                     <select class="form-select" id="portalSearch">
                         <option value="1" selected>Comprasnet</option>
@@ -27,7 +27,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Disputas Hoje:</h5>
                         <p class="card-text text-center">
-                            <b>3</b>
+                            <b> {{ $pregs_today }} </b>
                         </p>
                         <p class="card-text">
                         <div class="d-grid">
@@ -42,7 +42,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Disputas Amanhã:</h5>
                         <p class="card-text text-center">
-                            <b>2</b>
+                            <b>{{ $pregs_tomorrow}}</b>
                         </p>
                         <p class="card-text">
                         <div class="d-grid">
