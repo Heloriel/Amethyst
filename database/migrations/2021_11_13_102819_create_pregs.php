@@ -1,0 +1,41 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreatePregs extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('pregs', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->string('uasg');
+            $table->string('preg');
+            $table->string('name');
+            $table->integer('type');
+            $table->integer('portal');
+            $table->integer('status');
+            $table->date('date');
+            $table->time('time');
+            $table->text('obs');
+            $table->text('tags');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('pregs');
+    }
+}

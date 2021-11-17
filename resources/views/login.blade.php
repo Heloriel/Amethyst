@@ -15,18 +15,16 @@
 <body>
     <main>
         <section>
+
             <div class="container">
-                <div class="row align-items-end justify-content-center">
-                    <div class="col-md-4 col-sm-12 text-center">
+                <div class="row align-items-center justify-content-center">
+
+                    <div class="col-4 text-center">
                         <img src="img/Logo-alt.svg" alt="Logo" id="logo">
-                    </div>
-                </div>
-                <div class="row align-items-start justify-content-center">
-                    <div class="col-md-4 col-sm-12 form-container">
                         <form action="/home" method="get">
-                            <input type="text" class="form-control mb-5" placeholder="USUÁRIO" aria-label="Usuário"
+                            <input type="text" class="form-control bg-transparent text-white rounded-0 mb-5" placeholder="USUÁRIO" aria-label="Usuário"
                                 aria-describedby="basic-addon1">
-                            <input type="password" class="form-control mb-5" placeholder="SENHA" aria-label="Senha"
+                            <input type="password" class="form-control bg-transparent text-white rounded-0 mb-5" placeholder="SENHA" aria-label="Senha"
                                 aria-describedby="basic-addon1">
                             <div class="d-grid gap-2">
                                 <input type="submit" value="ENTRAR" class="btn btn-outline-light btn-block rounded">
@@ -36,6 +34,7 @@
 
                 </div>
             </div>
+
         </section>
     </main>
 </body>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AmethystAdminCore;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +22,14 @@ Route::get('home', [AmethystCoreController::class, 'home_view']);
 
 Route::get('manager', [AmethystCoreController::class, 'manager_view']);
 
-Route::get('addnew', [AmethystCoreController::class, 'addnew_view']);
+Route::get('create', [AmethystCoreController::class, 'create_view']);
+
+Route::post('create/save', [AmethystCoreController::class, 'preg_create']);
+
+/* ====================================================================== */
+
+Route::get('config/general', [AmethystAdminCore::class, 'general_config']);
+
+Route::get('config/status', [AmethystAdminCore::class, 'status_config']);
+
+Route::get('config/portal', [AmethystAdminCore::class, 'portal_config']);
