@@ -7,7 +7,6 @@
 @section('title' , 'Início')
 
 @section('content')
-
 <div class="container-fluid">
 
 <table class="table align-middle table-hover table-sm table-responsive">
@@ -22,11 +21,12 @@
       </tr>
     </thead>
     <tbody>
+    
     @foreach ($fetch as $fetch_result)
     <tr>
         <th scope="row">
-            <span class="badge ms-2 p-2 bg-success rounded-circle" title="Homologado">
-                <span class="visually-hidden">Homologado</span>
+            <span class="badge {{ $status[$fetch_result->status]->color }} ms-2 p-2 rounded-circle" title="{{ $status[$fetch_result->status]->name }}">
+                <span class="visually-hidden">{{ $status[$fetch_result->status]->name }}</span>
             </span>
         </th>
       <td>{{ $fetch_result->preg }}</td>

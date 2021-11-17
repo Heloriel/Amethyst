@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
 
 use App\Models\Preg;
+use App\Models\Status;
 
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -43,13 +44,26 @@ class AmethystCoreController extends Controller
 
     public function manager_view(){
 
-        $fetch = DB::table('pregs')->paginate(20);
+        $fetch_all = DB::table('pregs')->where("date", ">=", $this->today)->paginate(20);
+        $fetch_status = Status::all();
 
-        return view('manager', ['today_date' => $this->today_formated, 'time_now' => $this->now, 'fetch' => $fetch]);
+        return view('manager', [
+            'today_date' => $this->today_formated,
+            'time_now' => $this->now,
+            'fetch' => $fetch_all,
+            'status' => $fetch_status
+        ]);
     }
 
     public function create_view(){
-        return view('create', ['today_date' => $this->today_formated, 'time_now' => $this->now]);
+        
+        $fetch_status = Status::all();
+
+        return view('create', [
+            'today_date' => $this->today_formated,
+            'time_now' => $this->now,
+            'status' => $fetch_status
+        ]);
     }
     #endregion
 

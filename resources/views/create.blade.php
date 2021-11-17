@@ -57,16 +57,9 @@
         <div class="col-md-4 col-sm-12 mb-2">
                 <div class="form-floating">
                     <select class="form-select" name="status" id="inputGroupSelect03">
-                      <option value="1" selected>Publicado</option>
-                      <option value="2">Aguardando Documentação</option>
-                      <option value="3">Aguardando Cadastro</option>
-                      <option value="4">Aguardando Disputa</option>
-                      <option value="5">Em Disputa</option>
-                      <option value="6">Habilitação</option>
-                      <option value="7">Homologado</option>
-                      <option value="8">Desclassificado</option>
-                      <option value="9">Cancelado</option>
-                      <option value="10">Encerrado</option>
+                        @foreach ($status as $option_status)
+                            <option value="{{ $option_status->id }}">{{ $option_status->name }}</option>
+                        @endforeach
                     </select>
                     <label for="inputGroupSelect03">Situação</label>
                   </div>
