@@ -8,7 +8,7 @@
     <title>{{ config('app.name') }} - @yield('title')</title>
 
     {{-- Custom CSS --}}
-    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="/css/global.css">
     @yield('css')
 
     {{-- ICONS --}}
@@ -32,7 +32,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="img/Logo.svg" alt="Logo" height="25" /></a>
+            <a class="navbar-brand" href="#"><img src="/img/Logo.svg" alt="Logo" height="25" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -88,14 +88,14 @@
                       </li>
 
                       <li class="nav-item">
-                        <a href="#" class="nav-link rounded-0 {{ (request()->is('config')) ? 'active' : '' }} link-dark d-flex" data-bs-toggle="collapse" data-bs-target="#config-collapse" aria-expanded="true">
+                        <a href="#" class="nav-link rounded-0 {{ (request()->is('config/general', 'config/status', 'config/portal')) ? 'active' : '' }} link-dark d-flex" data-bs-toggle="collapse" data-bs-target="#config-collapse" aria-expanded="true">
                           <ion-icon name="settings-outline"></ion-icon>
                           CONFIGURAÇÕES
                         </a>
-                        <div class="collapse {{ (request()->is('config')) ? 'show' : '' }} submenu" id="config-collapse" style="">
+                        <div class="collapse {{ (request()->is('config/general', 'config/status', 'config/portal')) ? 'show' : '' }} submenu" id="config-collapse" style="">
                             <ul class="btn-toggle-nav px-3 mt-1 list-unstyled small">
-                                <li class="nav-item rounded-pill small p-0 mb-1 {{ (request()->is('config')) ? 'bg-secondary link-light' : '' }}">
-                                    <a href="/config/general" class="nav-link p-1 rounded-0 {{ request()->is('config') ? 'text-white' : '' }} d-flex link-dark">
+                                <li class="nav-item rounded-pill small p-0 mb-1 {{ (request()->is('config/general')) ? 'bg-secondary link-light' : '' }}">
+                                    <a href="/config/general" class="nav-link p-1 rounded-0 {{ request()->is('config/general') ? 'text-white' : '' }} d-flex link-dark">
                                       <ion-icon name="chevron-forward-outline"></ion-icon> <span class="me-1">
                                       GERAL
                                     </a>
@@ -120,7 +120,7 @@
                     <div class="nav-item pb-3 ps-3">
                       <div class="dropdown">
                         <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                          <img src="img/Logo.svg" alt="" width="32" height="32" class="rounded-circle me-2 user-avatar">
+                          <img src="/img/Logo.svg" alt="" width="32" height="32" class="rounded-circle me-2 user-avatar">
                           <strong>Scriplex</strong>
                         </a>
                         <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
@@ -132,16 +132,18 @@
                   </div>
 
                 <div class="col py-3 main-frame">
-                @yield('content')
-
-                @if (session('msg'))
-                <div class="col-10 mx-auto">
-                    <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                        {{session('msg')}}
-                        <button type="button" class="btn-close align-self-end" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
+                @if (session('alert'))                
+                  <div class="col-10 mx-auto" id="alert-message" id="process-alert">
+                    <div class="p-5">
+                      <div class="alert alert-primary alert-dismissible fade show" role="alert" id="alert-inner-message">
+                          {{session('alert')}}
+                          <button type="button" class="btn-close align-self-end" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+                  </div>
                 </div>
                 @endif
+
+                @yield('content')                
 
                 </div>
             </div>

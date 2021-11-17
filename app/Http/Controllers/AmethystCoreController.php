@@ -84,7 +84,7 @@ class AmethystCoreController extends Controller
         $preg->tags = 'disabled';
 
         $preg->save();
-        return redirect('/create')->with('msg', 'Licitação cadastrada com sucesso!');
+        return redirect('/create')->with('alert', 'Licitação cadastrada com sucesso!');
     }
     #endregion
 }
