@@ -132,19 +132,17 @@
                   </div>
 
                 <div class="col py-3 main-frame">
-                @if (session('alert'))                
-                  <div class="col-10 mx-auto" id="alert-message" id="process-alert">
-                    <div class="p-5">
-                      <div class="alert alert-primary alert-dismissible fade show" role="alert" id="alert-inner-message">
-                          {{session('alert')}}
-                          <button type="button" class="btn-close align-self-end" data-bs-dismiss="alert" aria-label="Close"></button>
-                      </div>
-                  </div>
-                </div>
-                @endif
-
-                @yield('content')                
-
+                  
+                  @yield('content')                
+                  
+                  @if (session('alert'))                
+                    <div class="col-10 mx-auto mb-3 d-flex justify-content-center" id="global-alert">
+                        <div class="alert alert-primary alert-dismissible fade show" role="alert" style="width: 90%">
+                            {{session('alert')}}
+                            <button type="button" class="btn-close align-self-end" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                  @endif
                 </div>
             </div>
         </div>
