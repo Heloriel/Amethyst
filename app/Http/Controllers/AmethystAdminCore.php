@@ -6,7 +6,15 @@ use Illuminate\Http\Request;
 
 class AmethystAdminCore extends Controller
 {
-    function index(){
+    function general_config(){
+        return view('config.index');
+    }
+
+    function status_config(){
+        return view('config.status');
+    }
+
+    function portal_config(){
         return view('config.index');
     }
 }

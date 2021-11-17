@@ -28,4 +28,8 @@ Route::post('create/save', [AmethystCoreController::class, 'preg_create']);
 
 /* ====================================================================== */
 
-Route::get('config',[AmethystAdminCore::class, 'index']);
+Route::get('config/general', [AmethystAdminCore::class, 'general_config']);
+
+Route::get('config/status', [AmethystAdminCore::class, 'status_config']);
+
+Route::get('config/portal', [AmethystAdminCore::class, 'portal_config']);

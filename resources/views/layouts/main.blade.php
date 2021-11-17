@@ -95,7 +95,7 @@
                         <div class="collapse {{ (request()->is('config')) ? 'show' : '' }} submenu" id="config-collapse" style="">
                             <ul class="btn-toggle-nav px-3 mt-1 list-unstyled small">
                                 <li class="nav-item rounded-pill small p-0 mb-1 {{ (request()->is('config')) ? 'bg-secondary link-light' : '' }}">
-                                    <a href="/config" class="nav-link p-1 rounded-0 {{ request()->is('config') ? 'text-white' : '' }} d-flex link-dark">
+                                    <a href="/config/general" class="nav-link p-1 rounded-0 {{ request()->is('config') ? 'text-white' : '' }} d-flex link-dark">
                                       <ion-icon name="chevron-forward-outline"></ion-icon> <span class="me-1">
                                       GERAL
                                     </a>
@@ -103,7 +103,13 @@
                                 <li class="nav-item rounded-pill small p-0 mb-1 {{ (request()->is('config/status')) ? 'bg-secondary link-light' : '' }}">
                                     <a href="/config/status" class="nav-link p-1 rounded-0 {{ request()->is('config/status') ? 'text-white' : '' }} d-flex link-dark">
                                       <ion-icon name="chevron-forward-outline"></ion-icon> <span class="me-1">
-                                      STATUS
+                                      SITUAÇÕES
+                                    </a>
+                                </li>
+                                <li class="nav-item rounded-pill small p-0 mb-1 {{ (request()->is('config/portal')) ? 'bg-secondary link-light' : '' }}">
+                                    <a href="/config/portal" class="nav-link p-1 rounded-0 {{ request()->is('config/portal') ? 'text-white' : '' }} d-flex link-dark">
+                                      <ion-icon name="chevron-forward-outline"></ion-icon> <span class="me-1">
+                                      PORTAIS
                                     </a>
                                 </li>
                             </ul>
@@ -126,7 +132,17 @@
                   </div>
 
                 <div class="col py-3 main-frame">
-                    @yield('content')
+                @yield('content')
+
+                @if (session('msg'))
+                <div class="col-10 mx-auto">
+                    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                        {{session('msg')}}
+                        <button type="button" class="btn-close align-self-end" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+                @endif
+
                 </div>
             </div>
         </div>

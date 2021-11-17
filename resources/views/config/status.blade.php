@@ -1,9 +1,10 @@
 @extends('layouts.main')
 
 @section('css')
+
 @endsection
 
-@section('title' , 'Configurações')
+@section('title' , 'Situações')
 
 @section('content')
 <div class="container">
@@ -14,4 +15,5 @@
 @endsection
 
 @section("afterFooter")
+
 @endsection

@@ -93,7 +93,7 @@
                 <div class="tag-container mt-3"></div>
             </div>
         </div>
-        <div class="col-12 d-flex justify-content-between">
+        <div class="col-12 d-flex justify-content-between mb-5">
             <button class="btn btn-outline-danger rounded-pill" onClick="formReset()"><ion-icon name="close-outline" id="clear-btn-icon"></ion-icon> LIMPAR</button>
             <button class="btn btn-outline-success rounded-pill"><ion-icon name="checkmark-outline" id="save-btn-icon"></ion-icon> SALVAR</button>
         </div>
