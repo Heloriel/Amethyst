@@ -136,8 +136,8 @@
                   @yield('content')                
                   
                   @if (session('alert'))                
-                    <div class="col-10 mx-auto mb-3 d-flex justify-content-center" id="global-alert">
-                        <div class="alert alert-primary alert-dismissible fade show" role="alert" style="width: 90%">
+                    <div class="col-12 m-0 d-flex justify-content-center" id="global-alert">
+                        <div class="alert alert-{{ session('type') }} alert-dismissible fade show" role="alert" style="width: 90%">
                             {{session('alert')}}
                             <button type="button" class="btn-close align-self-end" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>

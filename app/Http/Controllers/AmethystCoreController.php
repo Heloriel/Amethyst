@@ -48,10 +48,16 @@ class AmethystCoreController extends Controller
         $fetch_status = Status::all();
         $fetch_portal = Portal::all();
         
-        foreach($fetch_status as $key => $value){
+        foreach($fetch_status as $value){
             $name = $value->name;
             $color = $value->color;
             $status_array[$value->id] = [$name, $color];
+        }
+
+        foreach($fetch_portal as $value){
+            $name = $value->name;
+            $url = $value->base_url;
+            $portal_array[$value->id] = [$name, $url];
         }
 
         return view('manager', [
@@ -59,7 +65,7 @@ class AmethystCoreController extends Controller
             'time_now' => $this->now,
             'fetch' => $fetch_all,
             'status' => $status_array,
-            'portal' => $fetch_portal
+            'portal' => $portal_array
         ]);
     }
 
@@ -92,7 +98,13 @@ class AmethystCoreController extends Controller
         $preg->tags = 'disabled';
 
         $preg->save();
-        return redirect('/create')->with('alert', 'Licitação cadastrada com sucesso!');
+        return redirect('/create')->with('alert', 'Licitação cadastrada com sucesso!')->with('type', 'success');
+    }
+
+    public function preg_delete($id)
+    {
+        Preg::where('id', $id)->delete();
+        return redirect('/manager')->with('alert', 'Pregão deletado com sucesso!')->with('type', 'success');
     }
     #endregion
 }

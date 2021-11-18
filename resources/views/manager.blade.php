@@ -31,16 +31,20 @@
         </th>
       <td>{{ $fetch_result->preg }}</td>
       <td>{{ $fetch_result->uasg }}</td>
-      <td>{{ $portal[$fetch_result->portal - 1]->name }}</td>
+      <td>{{ $portal[$fetch_result->portal][0] }}</td>
       <td>{{ date('d/m/Y', strtotime($fetch_result->date)) }} - {{ date('H:i', strtotime($fetch_result->time)) }}</td>
       <td id="actions">
           <a href="#" class="link-primary"><ion-icon name="create-outline"></ion-icon></a>
-          <a href="#" class="link-danger"><ion-icon name="trash-outline"></ion-icon></a>
+          <a href="/manager/delete/{{ $fetch_result->id }}" class="link-danger" onClick="return confirm('Deseja realmente deletar o pregão {{ $fetch_result->preg }} ?')"><ion-icon name="trash-outline"></ion-icon></a>
       </td>
     </tr>
     @endforeach
     </tbody>
   </table>
 </div>
+
+@endsection
+
+@section('afterFooter')
 
 @endsection

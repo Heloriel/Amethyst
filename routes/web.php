@@ -22,6 +22,8 @@ Route::get('home', [AmethystCoreController::class, 'home_view']);
 
 Route::get('manager', [AmethystCoreController::class, 'manager_view']);
 
+Route::get('manager/delete/{id}', [AmethystCoreController::class, 'preg_delete']);
+
 Route::get('create', [AmethystCoreController::class, 'create_view']);
 
 Route::post('create/save', [AmethystCoreController::class, 'preg_create']);
