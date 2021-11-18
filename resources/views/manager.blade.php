@@ -25,17 +25,17 @@
     @foreach ($fetch as $fetch_result)
     <tr>
         <th scope="row">
-            <span class="badge {{ $status[$fetch_result->status]->color }} ms-2 p-2 rounded-circle" title="{{ $status[$fetch_result->status]->name }}">
-                <span class="visually-hidden">{{ $status[$fetch_result->status]->name }}</span>
+            <span class="badge ms-2 p-2 rounded-circle" title="{{ $status[$fetch_result->status][0] }}" style="background-color: {{ $status[$fetch_result->status][1] }};">
+                <span class="visually-hidden">{{ $status[$fetch_result->status][0] }}</span>
             </span>
         </th>
       <td>{{ $fetch_result->preg }}</td>
       <td>{{ $fetch_result->uasg }}</td>
-      <td>{{ $fetch_result->portal}}</td>
-      <td>{{ $fetch_result->date }} - {{ $fetch_result->time }}</td>
+      <td>{{ $portal[$fetch_result->portal - 1]->name }}</td>
+      <td>{{ date('d/m/Y', strtotime($fetch_result->date)) }} - {{ date('H:i', strtotime($fetch_result->time)) }}</td>
       <td id="actions">
-          <button class="btn btn-success btn-sm"><ion-icon name="create-outline"></ion-icon></button>
-          <button class="btn btn-danger btn-sm"><ion-icon name="trash-outline"></ion-icon></button>
+          <a href="#" class="link-primary"><ion-icon name="create-outline"></ion-icon></a>
+          <a href="#" class="link-danger"><ion-icon name="trash-outline"></ion-icon></a>
       </td>
     </tr>
     @endforeach

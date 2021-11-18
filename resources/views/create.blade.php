@@ -46,10 +46,9 @@
         <div class="col-md-4 col-sm-12 mb-3">
                 <div class="form-floating mb-2">
                     <select class="form-select" name="portal" id="inputGroupSelect02">
-                      <option value="1" selected>Comprasnet</option>
-                      <option value="2">Licitações-E</option>
-                      <option value="3">Bec-SP</option>
-                      <option value="3">Rede Empresas</option>
+                        @foreach ($portal as $option_portal)
+                            <option value="{{ $option_portal->id }}">{{ $option_portal->name }}</option>
+                        @endforeach
                     </select>
                     <label for="inputGroupSelect02">Portal</label>
                 </div>

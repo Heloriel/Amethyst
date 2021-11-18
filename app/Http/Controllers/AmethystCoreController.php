@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Date;
 
 use App\Models\Preg;
 use App\Models\Status;
+use App\Models\Portal;
 
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class AmethystCoreController extends Controller
@@ -16,15 +16,15 @@ class AmethystCoreController extends Controller
     #region FIELDS SETUP
     private $today;
     private $tomorrow;
-    private $today_formated;
+    private $today_formatted;
     private $now;
     #endregion
 
     #region CONSTRUCTOR
     public function __construct(){
         $this->today = Date('Y-m-d', time());
-        $this->tomorrow = date('Y-m-d', strtotime(' +1 day'));
-        $this->today_formated = Date('d/m/Y');
+        $this->tomorrow = Date('Y-m-d', strtotime(' +1 day'));
+        $this->today_formatted = Date('d/m/Y');
         $this->now = Date('H:i');
     }
     #endregion
@@ -44,25 +44,35 @@ class AmethystCoreController extends Controller
 
     public function manager_view(){
 
-        $fetch_all = DB::table('pregs')->where("date", ">=", $this->today)->paginate(20);
+        $fetch_all = DB::table('pregs')->where("date", ">=", $this->today)->orderBy('date')->orderBy('time')->paginate(20);
         $fetch_status = Status::all();
+        $fetch_portal = Portal::all();
+        
+        foreach($fetch_status as $key => $value){
+            $name = $value->name;
+            $color = $value->color;
+            $status_array[$value->id] = [$name, $color];
+        }
 
         return view('manager', [
-            'today_date' => $this->today_formated,
+            'today_date' => $this->today_formatted,
             'time_now' => $this->now,
             'fetch' => $fetch_all,
-            'status' => $fetch_status
+            'status' => $status_array,
+            'portal' => $fetch_portal
         ]);
     }
 
     public function create_view(){
         
         $fetch_status = Status::all();
+        $fetch_portal = Portal::all();
 
         return view('create', [
-            'today_date' => $this->today_formated,
+            'today_date' => $this->today_formatted,
             'time_now' => $this->now,
-            'status' => $fetch_status
+            'status' => $fetch_status,
+            'portal' => $fetch_portal
         ]);
     }
     #endregion
@@ -76,9 +86,7 @@ class AmethystCoreController extends Controller
         $preg->type = $request->type;
         $preg->portal = $request->portal;
         $preg->status = $request->status;
-        $formated_date = str_replace('/','-',$request->date);
-        $formated_date = Carbon::parse($formated_date)->format('Y-m-d');
-        $preg->date = $formated_date;
+        $preg->date = $request->date;
         $preg->time = $request->time;
         $preg->obs = $request->obs;
         $preg->tags = 'disabled';
