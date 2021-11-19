@@ -4,7 +4,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="nav-item ms-auto me-2 navbar-search">            
+        <div class="nav-item ms-auto me-2 navbar-search">
                 <form class="">
                     <div>
                         <input class="form-control me-2 rounded-pill navbar-search" type="search" placeholder="PROCURAR NO SISTEMA ..." aria-label="Search">
@@ -25,9 +25,8 @@
                     <a href="#" class="list-group-item" aria-current="true">
                         The current link item
                     </a>
-                </div>              
+                </div>
             </div>
         </div>
     </nav>
 
-    

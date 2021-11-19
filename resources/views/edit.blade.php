@@ -92,14 +92,14 @@
                 <p class="my-2">Digite a TAG e pressione <kbd>TAB</kbd> ou <kbd>ENTER</kbd> para inserir.</p>
                 <div class="tag-container mt-3">
                     @foreach ($tags as $individual_tag)
-                        <p class="tag">{{ $individual_tag }}</p>
+                            <p class="tag">{{ $individual_tag }}</p>
                     @endforeach
                 </div>
             </div>
             <input type="hidden" name="tags" id="userTags" value="{{ $preg->tags }}">
         </div>
         <div class="col-12 d-flex justify-content-between mb-5" id="actions">
-            <div class="col-8">
+            <div class="col-6">
                 <a class="btn btn-outline-danger rounded-pill" href="/manager" onClick="return confirm('Deseja realmente cancelar a edição?')">
                     <ion-icon name="close-circle-outline"></ion-icon> CANCELAR
                 </a>
@@ -107,6 +107,11 @@
             <div class="col-2 text-end">
                 <a class="btn btn-outline-danger rounded-pill" href="/manager/delete/{{ $preg->id }}" onClick="return confirm('Deseja realmente deletar o pregão {{ $preg->preg }} ?')">
                     <ion-icon name="trash-outline"></ion-icon> EXCLUIR
+                </a>
+            </div>
+            <div class="col-2 text-end">
+                <a href="#" class="btn btn-outline-primary rounded-pill">
+                    <ion-icon name="open-outline"></ion-icon> ABRIR
                 </a>
             </div>
             <div class="col-2 text-end">

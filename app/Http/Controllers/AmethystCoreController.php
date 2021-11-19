@@ -79,8 +79,8 @@ class AmethystCoreController extends Controller
 
     public function edit_view($id){
         $fetch = Preg::where('id', $id)->first();
-        
         $tags_array =  explode(',', $fetch->tags);
+        $tags_count = count($tags_array);
 
         return view('edit', [
             'today_date' => $this->today_formatted,
@@ -88,7 +88,8 @@ class AmethystCoreController extends Controller
             'preg' => $fetch,
             'status' => $this->all_status,
             'portal' => $this->all_portals,
-            'tags' => $tags_array
+            'tags' => $tags_array,
+            'tags_count' => $tags_count
         ]);
     }
 

@@ -1,10 +1,19 @@
-let input, hashtagArray, container, t;
+let input, tagArray, container, t;
+var userTags = document.getElementById("userTags");
 
 input = document.querySelector('#hashtags');
 container = document.querySelector('.tag-container');
-hashtagArray = [];
-hashtags = {}
+tagArray = [];
 
+function deleteTag(element){
+    for( var i = 0; i < tagArray.length; i++){
+        if ( tagArray[i] == element.prop('innerHTML')) {
+            tagArray.splice(i, 1);
+            userTags.value = tagArray;
+        }
+    }
+    element.remove();
+}
 
 $("#hashtags-container").on('keydown', '#hashtags', function(e) {
   var keyCode = e.keyCode || e.which;
@@ -14,29 +23,36 @@ $("#hashtags-container").on('keydown', '#hashtags', function(e) {
     var text = document.createTextNode(input.value)
     var p = document.createElement('p');
     container.appendChild(p);
-    hashtagArray.push(input.value);
-    var userTags = document.getElementById("userTags");
-    userTags.value = hashtagArray;
+    tagArray.push(input.value);
+    userTags.value = tagArray;
     p.appendChild(text);
     p.classList.add('tag');
     input.value = '';
-
-    let deleteTags = document.querySelectorAll('.tag');
-
-    for(let i = 0; i < deleteTags.length; i++) {
-      deleteTags[i].addEventListener('click', () => {
-        container.removeChild(deleteTags[i]);
-      });
-    }
   }
+
+    $('.tag').on('click', function (){
+        deleteTag($(this));
+    });
+
 });
 
 $(document).ready(function(){
-  $('#timepicker').timepicker({
-    timeFormat: 'HH:mm'
-  });
 
-  $( "#datepicker" ).datepicker({ dateFormat: 'dd/mm/yy' });
+    $('#timepicker').timepicker({
+        timeFormat: 'HH:mm'
+    });
 
-  $( "#pubPicker" ).datepicker({ dateFormat: 'dd/mm/yy' });
+    $( "#datepicker" ).datepicker({ dateFormat: 'dd/mm/yy' });
+
+    $( "#pubPicker" ).datepicker({ dateFormat: 'dd/mm/yy' });
+
+    $('.tag').on('click', function (){
+        deleteTag($(this));
+    });
+
+    $('.tag').each(function () {
+        tagArray.push(this.innerHTML);
+    });
+
+    userTags.value = tagArray;
 });
