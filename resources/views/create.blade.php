@@ -88,10 +88,11 @@
         </div>
         <div class="col-md-12 col-sm-12 mb-4">
             <div class="" id="hashtags-container">
-                <input type="text" id="hashtags" autocomplete="off" class="form-control" placeholder="TAGS" maxlength="30">
+                <input type="text" id="hashtags" autocomplete="off" class="form-control" placeholder="TAG's" maxlength="30">
                 <p class="my-2">Digite a TAG e pressione <kbd>TAB</kbd> ou <kbd>ENTER</kbd> para inserir.</p>
                 <div class="tag-container mt-3"></div>
             </div>
+            <input type="hidden" name="tags" id="userTags" value="">
         </div>
         <div class="col-12 d-flex justify-content-between mb-5">
             <button class="btn btn-outline-danger rounded-pill" onClick="formReset()"><ion-icon name="close-circle-outline" id="clear-btn-icon"></ion-icon> LIMPAR</button>
@@ -104,6 +105,6 @@
 
 
 @section("afterFooter")
-<script src="js/customInputs.js"></script>
+<script src="/js/customInputs.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 @endsection

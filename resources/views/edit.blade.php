@@ -88,10 +88,15 @@
         </div>
         <div class="col-md-12 col-sm-12 mb-4">
             <div class="" id="hashtags-container">
-                <input type="text" id="hashtags" autocomplete="off" class="form-control" placeholder="TEMPORARY DISABLED" maxlength="25" disabled>
+                <input type="text" id="hashtags" autocomplete="off" class="form-control" placeholder="TAG's" maxlength="25">
                 <p class="my-2">Digite a TAG e pressione <kbd>TAB</kbd> ou <kbd>ENTER</kbd> para inserir.</p>
-                <div class="tag-container mt-3"></div>
+                <div class="tag-container mt-3">
+                    @foreach ($tags as $individual_tag)
+                        <p class="tag">{{ $individual_tag }}</p>
+                    @endforeach
+                </div>
             </div>
+            <input type="hidden" name="tags" id="userTags" value="{{ $preg->tags }}">
         </div>
         <div class="col-12 d-flex justify-content-between mb-5" id="actions">
             <div class="col-8">

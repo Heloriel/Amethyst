@@ -3,6 +3,7 @@ let input, hashtagArray, container, t;
 input = document.querySelector('#hashtags');
 container = document.querySelector('.tag-container');
 hashtagArray = [];
+hashtags = {}
 
 
 $("#hashtags-container").on('keydown', '#hashtags', function(e) {
@@ -13,6 +14,9 @@ $("#hashtags-container").on('keydown', '#hashtags', function(e) {
     var text = document.createTextNode(input.value)
     var p = document.createElement('p');
     container.appendChild(p);
+    hashtagArray.push(input.value);
+    var userTags = document.getElementById("userTags");
+    userTags.value = hashtagArray;
     p.appendChild(text);
     p.classList.add('tag');
     input.value = '';

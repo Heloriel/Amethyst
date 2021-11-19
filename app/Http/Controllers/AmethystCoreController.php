@@ -79,12 +79,16 @@ class AmethystCoreController extends Controller
 
     public function edit_view($id){
         $fetch = Preg::where('id', $id)->first();
+        
+        $tags_array =  explode(',', $fetch->tags);
+
         return view('edit', [
             'today_date' => $this->today_formatted,
             'time_now' => $this->now,
             'preg' => $fetch,
             'status' => $this->all_status,
-            'portal' => $this->all_portals
+            'portal' => $this->all_portals,
+            'tags' => $tags_array
         ]);
     }
 
@@ -111,7 +115,7 @@ class AmethystCoreController extends Controller
         $preg->date = $request->date;
         $preg->time = $request->time;
         $preg->obs = $request->obs;
-        $preg->tags = 'disabled';
+        $preg->tags = $request->tags;
         $preg->save();
 
         return redirect('/create')->with('alert', 'Licitação cadastrada com sucesso!')->with('type', 'success');
@@ -129,7 +133,7 @@ class AmethystCoreController extends Controller
         $preg->date = $request->date;
         $preg->time = $request->time;
         $preg->obs = $request->obs;
-        $preg->tags = 'disabled';
+        $preg->tags = $request->tags;
         $preg->save();
 
         return redirect('/manager')->with('alert', 'Licitação atualizada com sucesso!')->with('type', 'success');
