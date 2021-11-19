@@ -16,29 +16,29 @@
     <div class="row">
         <div class="col-md-2 col-sm-12 mb-3">
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInputUASG" name="uasg" autocomplete="off" placeholder="UASG" aria-label="UASG" aria-describedby="basic-addon1">
+                <input type="text" value="{{ $preg->uasg }}" class="form-control" id="floatingInputUASG" name="uasg" autocomplete="off" placeholder="UASG" aria-label="UASG" aria-describedby="basic-addon1">
                 <label for="floatingInputUASG" style="color: #92999F;">UASG</label>
             </div>
         </div>
         <div class="col-md-3 col-sm-12 mb-3">
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInputNPregao" name="preg" autocomplete="off" placeholder="PREGÃO" aria-label="Número do Pregão">
+                <input type="text" value="{{ $preg->preg }}" class="form-control" id="floatingInputNPregao" name="preg" autocomplete="off" placeholder="PREGÃO" aria-label="Número do Pregão">
                 <label for="floatingInputNPregao" style="color: #92999F;">PREGÃO</label>
             </div>
         </div>
         <div class="col-md-7 col-sm-12 mb-3">
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInputNome" name="name" autocomplete="off" placeholder="NOME DO ORGÃO" aria-label="Nome do Orgão">
+                <input type="text" value="{{ $preg->name }}" class="form-control" id="floatingInputNome" name="name" autocomplete="off" placeholder="NOME DO ORGÃO" aria-label="Nome do Orgão">
                 <label for="floatingInputNome" style="color: #92999F;">NOME DO ORGÃO</label>
             </div>
         </div>
         <div class="col-md-4 col-sm-12 mb-2">
                 <div class="form-floating">
                     <select class="form-select" name="type" id="inputGroupSelect01">
-                      <option value="1" selected>Pregão Eletrônico</option>
-                      <option value="2">Convite</option>
-                      <option value="3">Dispensa de Licitação</option>
-                      <option value="4">Orçamento</option>
+                      <option value="1" @if ( $preg->type == 1 ) selected @endif>Pregão Eletrônico</option>
+                      <option value="2" @if ( $preg->type == 2 ) selected @endif>Convite</option>
+                      <option value="3" @if ( $preg->type == 3 ) selected @endif>Dispensa de Licitação</option>
+                      <option value="4" @if ( $preg->type == 4 ) selected @endif>Orçamento</option>
                     </select>
                     <label for="inputGroupSelect01">Tipo da Disputa</label>
                   </div>
@@ -47,7 +47,7 @@
                 <div class="form-floating mb-2">
                     <select class="form-select" name="portal" id="inputGroupSelect02">
                         @foreach ($portal as $option_portal)
-                            <option value="{{ $option_portal->id }}">{{ $option_portal->name }}</option>
+                            <option value="{{ $option_portal->id }}" @if ( $preg->portal == $option_portal->id ) selected @endif>{{ $option_portal->name }}</option>
                         @endforeach
                     </select>
                     <label for="inputGroupSelect02">Portal</label>
@@ -57,7 +57,7 @@
                 <div class="form-floating">
                     <select class="form-select" name="status" id="inputGroupSelect03">
                         @foreach ($status as $option_status)
-                            <option value="{{ $option_status->id }}">{{ $option_status->name }}</option>
+                            <option value="{{ $option_status->id }}" @if ( $preg->status == $option_status->id ) selected @endif>{{ $option_status->name }}</option>
                         @endforeach
                     </select>
                     <label for="inputGroupSelect03">Situação</label>
@@ -65,17 +65,17 @@
         </div>
         <div class="col-md-6 col-sm-12 mb-4">
             <div class="input-group">
-                <input type="text" name="date" id="datepicker" placeholder="{{ $today_date }}" autocomplete="off" class="form-control custom-datepicker">
+                <input type="text" name="date" value="{{ date('d/m/Y', strtotime($preg->date)) }}" id="datepicker" placeholder="{{ $today_date }}" autocomplete="off" class="form-control custom-datepicker">
             </div>
         </div>
         <div class="col-md-6 col-sm-12 mb-4">
             <div class="input-group">
-                <input type="text" name="time" id="timepicker" placeholder="{{ $time_now }}" autocomplete="off" class="form-control custom-datepicker">
+                <input type="text" name="time" value="{{ date('H:i', strtotime($preg->time)) }}" id="timepicker" placeholder="{{ $time_now }}" autocomplete="off" class="form-control custom-datepicker">
             </div>
         </div>
         <div class="col-md-12 col-sm-12 mb-4">
             <div class="input-group">
-                <textarea class="form-control" name="obs" placeholder="OBSERVAÇÕES" rows="10" autocomplete="off"></textarea>
+                <textarea class="form-control" name="obs" placeholder="OBSERVAÇÕES" rows="10" autocomplete="off">{{ $preg->obs }}</textarea>
             </div>
         </div>
         <div class="col-md-12 col-sm-12 mb-4">
@@ -85,9 +85,22 @@
                 <div class="tag-container mt-3"></div>
             </div>
         </div>
-        <div class="col-12 d-flex justify-content-between mb-5">
-            <button class="btn btn-outline-danger rounded-pill" onClick="formReset()"><ion-icon name="close-circle-outline" id="clear-btn-icon"></ion-icon> LIMPAR</button>
-            <button class="btn btn-outline-success rounded-pill"><ion-icon name="checkmark-outline" id="save-btn-icon"></ion-icon> SALVAR</button>
+        <div class="col-12 d-flex justify-content-between mb-5" id="actions">
+            <div class="col-8">
+                <a class="btn btn-outline-danger rounded-pill" href="/manager" onClick="return confirm('Deseja realmente cancelar a edição?')">
+                    <ion-icon name="close-circle-outline"></ion-icon> CANCELAR
+                </a>
+            </div>
+            <div class="col-2 text-end">
+                <a class="btn btn-outline-danger rounded-pill" href="/manager/delete/{{ $preg->id }}" onClick="return confirm('Deseja realmente deletar o pregão {{ $preg->preg }} ?')">
+                    <ion-icon name="trash-outline"></ion-icon> EXCLUIR
+                </a>
+            </div>
+            <div class="col-2 text-end">
+                <button class="btn btn-outline-success rounded-pill">
+                    <ion-icon name="checkmark-outline"></ion-icon> SALVAR
+                </button>
+            </div>
         </div>
     </div>
 </div>
@@ -96,6 +109,6 @@
 
 
 @section("afterFooter")
-<script src="js/customInputs.js"></script>
+<script src="/js/customInputs.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 @endsection

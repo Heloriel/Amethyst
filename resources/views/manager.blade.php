@@ -21,9 +21,9 @@
       </tr>
     </thead>
     <tbody>
-    
+
     @foreach ($fetch as $fetch_result)
-    <tr>
+    <tr class="@if(date('d/m/Y', strtotime($fetch_result->date)) == $today_date && date('H:i', strtotime($fetch_result->time)) <= $time_now ) table-danger @endif">
         <th scope="row">
             <span class="badge ms-2 p-2 rounded-circle" title="{{ $status[$fetch_result->status][0] }}" style="background-color: {{ $status[$fetch_result->status][1] }};">
                 <span class="visually-hidden">{{ $status[$fetch_result->status][0] }}</span>
@@ -34,7 +34,8 @@
       <td>{{ $portal[$fetch_result->portal][0] }}</td>
       <td>{{ date('d/m/Y', strtotime($fetch_result->date)) }} - {{ date('H:i', strtotime($fetch_result->time)) }}</td>
       <td id="actions">
-          <a href="#" class="link-primary"><ion-icon name="create-outline"></ion-icon></a>
+          <a href="#" class="link-primary me-3"><ion-icon name="eye-outline"></ion-icon></a>
+          <a href="/manager/edit/{{ $fetch_result->id }}" class="link-dark me-3"><ion-icon name="create-outline"></ion-icon></a>
           <a href="/manager/delete/{{ $fetch_result->id }}" class="link-danger" onClick="return confirm('Deseja realmente deletar o pregão {{ $fetch_result->preg }} ?')"><ion-icon name="trash-outline"></ion-icon></a>
       </td>
     </tr>

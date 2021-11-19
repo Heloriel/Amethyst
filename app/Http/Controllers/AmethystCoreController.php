@@ -18,6 +18,8 @@ class AmethystCoreController extends Controller
     private $tomorrow;
     private $today_formatted;
     private $now;
+    private $all_status;
+    private $all_portals;
     #endregion
 
     #region CONSTRUCTOR
@@ -26,6 +28,8 @@ class AmethystCoreController extends Controller
         $this->tomorrow = Date('Y-m-d', strtotime(' +1 day'));
         $this->today_formatted = Date('d/m/Y');
         $this->now = Date('H:i');
+        $this->all_status = Status::all();
+        $this->all_portals = Portal::all();
     }
     #endregion
 
@@ -45,20 +49,20 @@ class AmethystCoreController extends Controller
     public function manager_view(){
 
         $fetch_all = DB::table('pregs')->where("date", ">=", $this->today)->orderBy('date')->orderBy('time')->paginate(20);
-        $fetch_status = Status::all();
-        $fetch_portal = Portal::all();
-        
-        foreach($fetch_status as $value){
+
+        foreach($this->all_status as $value){
             $name = $value->name;
             $color = $value->color;
             $status_array[$value->id] = [$name, $color];
         }
 
-        foreach($fetch_portal as $value){
+
+        foreach($this->all_portals as $value){
             $name = $value->name;
             $url = $value->base_url;
             $portal_array[$value->id] = [$name, $url];
         }
+
 
         return view('manager', [
             'today_date' => $this->today_formatted,
@@ -69,16 +73,23 @@ class AmethystCoreController extends Controller
         ]);
     }
 
-    public function create_view(){
-        
-        $fetch_status = Status::all();
-        $fetch_portal = Portal::all();
+    public function edit_view($id){
+        $fetch = Preg::where('id', $id)->first();
+        return view('edit', [
+            'today_date' => $this->today_formatted,
+            'time_now' => $this->now,
+            'preg' => $fetch,
+            'status' => $this->all_status,
+            'portal' => $this->all_portals
+        ]);
+    }
 
+    public function create_view(){
         return view('create', [
             'today_date' => $this->today_formatted,
             'time_now' => $this->now,
-            'status' => $fetch_status,
-            'portal' => $fetch_portal
+            'status' => $this->all_status,
+            'portal' => $this->all_portals
         ]);
     }
     #endregion
@@ -96,8 +107,8 @@ class AmethystCoreController extends Controller
         $preg->time = $request->time;
         $preg->obs = $request->obs;
         $preg->tags = 'disabled';
-
         $preg->save();
+
         return redirect('/create')->with('alert', 'Licitação cadastrada com sucesso!')->with('type', 'success');
     }
 

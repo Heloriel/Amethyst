@@ -15,7 +15,6 @@
             <div class="col-12 mb-3">
 
                 <div class="input-group">
-                    <span class="input-group-text">ID</span>
                     <input type="text" aria-label="Nome" placeholder="NOME" class="form-control">
                     <input type="color" class="form-control form-control-color" id="" value="#000" title="Escolha a Cor" style="max-width: 50px">
                 </div>
