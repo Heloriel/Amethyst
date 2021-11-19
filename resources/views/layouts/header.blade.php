@@ -11,8 +11,23 @@
                     </div>
                 </form>
         </div>
-        <div class="nav-item mx-4 notifications">
-            <ion-icon name="notifications-outline"></ion-icon>
+            <div class="nav-item mx-4 notifications">
+                <a href="#" class="" role="button" id="dropdownNotifications" data-bs-toggle="dropdown" aria-expanded="false">
+                    <ion-icon name="notifications-outline"></ion-icon>
+                </a>
+                <div class="dropdown list-group-flush dropdown-menu dropdown-menu-end me-3" aria-labelledby="dropdownMenuLink">
+                    <a href="#" class="list-group-item" aria-current="true">
+                      The current link item
+                    </a>
+                    <a href="#" class="list-group-item" aria-current="true">
+                        The current link item
+                    </a>
+                    <a href="#" class="list-group-item" aria-current="true">
+                        The current link item
+                    </a>
+                </div>              
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+
+    

@@ -8,8 +8,6 @@
 
 @section('content')
 
-<form action="/create/save" method="post" id="addnew" >
-    @csrf
     <div class="container">
         <div class="row">
             <div class="col-12 mb-3">
@@ -18,6 +16,10 @@
                     <input type="text" aria-label="Nome" placeholder="NOME" class="form-control">
                     <input type="color" class="form-control form-control-color" id="" value="#000" title="Escolha a Cor" style="max-width: 50px">
                 </div>
+
+            </div>
+            
+            <div id="statusContainer" class="">
 
             </div>
 
@@ -30,7 +32,6 @@
             </div>
         </div>
     </div>
-    </form>
 @endsection
 
 @section("afterFooter")

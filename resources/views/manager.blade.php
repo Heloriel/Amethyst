@@ -38,10 +38,10 @@
       <td>{{ $fetch_result->preg }}</td>
       <td>{{ date('d/m/Y', strtotime($fetch_result->date)) }} - {{ date('H:i', strtotime($fetch_result->time)) }}</td>
       <td id="actions">
-          <a href="/manager/edit/{{ $fetch_result->id }}" class="link-dark me-3"><ion-icon name="create-outline"></ion-icon></a>
-          <a href="#" class="link-primary me-3"><ion-icon name="eye-outline" title=></ion-icon></a>
-          <a href="#" class="link-secondary me-3"><ion-icon name="open-outline" title=></ion-icon></a>
-          <a href="/manager/delete/{{ $fetch_result->id }}" class="link-danger me-3" onClick="return confirm('Deseja realmente deletar o pregão {{ $fetch_result->preg }} ?')"><ion-icon name="trash-outline"></ion-icon></a>
+        <a href="#" class="link-primary me-3"><ion-icon name="eye-outline" title=></ion-icon></a>
+        <a href="/manager/edit/{{ $fetch_result->id }}" class="link-dark me-3"><ion-icon name="create-outline"></ion-icon></a>
+        <a href="/manager/delete/{{ $fetch_result->id }}" class="link-danger me-3" onClick="return confirm('Deseja realmente deletar o pregão {{ $fetch_result->preg }} ?')"><ion-icon name="trash-outline"></ion-icon></a>
+        <a href="#" class="link-secondary me-3"><ion-icon name="open-outline" title=></ion-icon></a>
       </td>
     </tr>
     @endforeach
