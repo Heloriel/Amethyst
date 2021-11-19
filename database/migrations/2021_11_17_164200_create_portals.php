@@ -19,6 +19,12 @@ class CreatePortals extends Migration
             $table->string("name");
             $table->text('base_url');
         });
+
+        DB::table('portals')->insert(
+        array(
+            'name' => 'Comprasnet',
+            'base_url' => 'http://www.comprasnet.gov.br/'
+        ));
     }
 
     /**

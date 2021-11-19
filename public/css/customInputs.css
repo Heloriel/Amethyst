@@ -46,10 +46,10 @@ input {
 .tag{
   pointer-events: none;
   background-color: none;
-  color: #000;
+  color: #757575;
   padding: 6px 8px;
   margin: 5px;
-  border: 1px solid #000;
+  border: 1px solid #757575;
   border-radius: 50px;
   font-family: 'Poppins', sans-serif;
 }
@@ -62,8 +62,8 @@ input {
   width: 20px;
   margin-right: 6px;
   text-align: center;
-  color: #fff;
-  background-color: #000;
+  color: #353535;
+  background-color: #757575;
   cursor: pointer;
   border-radius: 50px;
   line-height: 1rem;

@@ -10,7 +10,7 @@
 
 @section('content')
 
-<form action="/create/save" method="post" id="addnew" >
+<form action="/manager/update/{{ $preg->id }}" method="post" id="addnew" >
 @csrf
 <div class="container">
     <div class="row">
@@ -63,14 +63,22 @@
                     <label for="inputGroupSelect03">Situação</label>
                   </div>
         </div>
-        <div class="col-md-6 col-sm-12 mb-4">
-            <div class="input-group">
-                <input type="text" name="date" value="{{ date('d/m/Y', strtotime($preg->date)) }}" id="datepicker" placeholder="{{ $today_date }}" autocomplete="off" class="form-control custom-datepicker">
+        <div class="col-md-4 col-sm-12 mb-4">
+            <div class="form-floating">
+                <input type="text" name="publication" value="{{ date('d/m/Y', strtotime($preg->publication)) }}" id="pubPicker" placeholder="{{ $today_date }}" autocomplete="off" class="form-control">
+                <label for="pubPicker" style="color: #92999F;">Data da Publicação</label>
             </div>
         </div>
-        <div class="col-md-6 col-sm-12 mb-4">
-            <div class="input-group">
+        <div class="col-md-4 col-sm-12 mb-4">
+            <div class="form-floating">
+                <input type="text" name="date" value="{{ date('d/m/Y', strtotime($preg->date)) }}" id="datepicker" placeholder="{{ $today_date }}" autocomplete="off" class="form-control custom-datepicker">
+                <label for="datepicker" style="color: #92999F;">Data da Disputa</label>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-4">
+            <div class="form-floating">
                 <input type="text" name="time" value="{{ date('H:i', strtotime($preg->time)) }}" id="timepicker" placeholder="{{ $time_now }}" autocomplete="off" class="form-control custom-datepicker">
+                <label for="datepicker" style="color: #92999F;">Hora da Disputa</label>
             </div>
         </div>
         <div class="col-md-12 col-sm-12 mb-4">

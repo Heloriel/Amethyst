@@ -1,4 +1,4 @@
-<div class="d-none d-md-flex flex-column flex-shrink-0 p-0 bg-light sidebar" style="width: 250px;" >
+<div class="d-none d-md-flex flex-column flex-shrink-0 p-0 bg-light sidebar" style="width: 250px;">
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
         <a href="/home" class="nav-link rounded-0 {{ request()->is('home') ? 'active' : '' }} d-flex link-dark">
@@ -26,20 +26,20 @@
         </a>
         <div class="collapse {{ (str_contains(url()->current(), 'config')) ? 'show' : '' }} submenu" id="config-collapse" style="">
             <ul class="btn-toggle-nav px-3 mt-1 list-unstyled small">
-                <li class="nav-item rounded-pill small p-0 mb-1 {{ (str_contains(url()->current(), 'general')) ? 'bg-secondary link-light' : '' }}">
-                    <a href="/config/general" class="nav-link p-1 rounded-0 {{ (str_contains(url()->current(), 'general')) ? 'text-white' : '' }} d-flex link-dark">
+                <li class="nav-item rounded-pill small p-0 mb-1 {{ (str_contains(url()->current(), 'general')) ? 'submenu-active' : '' }}">
+                    <a href="/config/general" class="nav-link p-1 rounded-0 d-flex link-dark">
                       <ion-icon name="chevron-forward-outline"></ion-icon> <span class="me-1">
                       GERAL
                     </a>
                 </li>
-                <li class="nav-item rounded-pill small p-0 mb-1 {{ (str_contains(url()->current(), 'status')) ? 'bg-secondary link-light' : '' }}">
-                    <a href="/config/status" class="nav-link p-1 rounded-0 {{ (str_contains(url()->current(), 'status')) ? 'text-white' : '' }} d-flex link-dark">
+                <li class="nav-item rounded-pill small p-0 mb-1 {{ (str_contains(url()->current(), 'status')) ? 'submenu-active' : '' }}">
+                    <a href="/config/status" class="nav-link p-1 rounded-0 d-flex link-dark">
                       <ion-icon name="chevron-forward-outline"></ion-icon> <span class="me-1">
                       SITUAÇÕES
                     </a>
                 </li>
-                <li class="nav-item rounded-pill small p-0 mb-1 {{ (str_contains(url()->current(), 'portal')) ? 'bg-secondary link-light' : '' }}">
-                    <a href="/config/portal" class="nav-link p-1 rounded-0 {{ (str_contains(url()->current(), 'portal')) ? 'text-white' : '' }} d-flex link-dark">
+                <li class="nav-item rounded-pill small p-0 mb-1 {{ (str_contains(url()->current(), 'portal')) ? 'submenu-active' : '' }}">
+                    <a href="/config/portal" class="nav-link p-1 rounded-0 d-flex link-dark">
                       <ion-icon name="chevron-forward-outline"></ion-icon> <span class="me-1">
                       PORTAIS
                     </a>

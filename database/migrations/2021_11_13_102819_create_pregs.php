@@ -22,6 +22,7 @@ class CreatePregs extends Migration
             $table->integer('type');
             $table->integer('portal');
             $table->integer('status');
+            $table->date('publication');
             $table->date('date');
             $table->time('time');
             $table->text('obs');

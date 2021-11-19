@@ -10,16 +10,16 @@
     {{-- Custom CSS --}}
     <link rel="stylesheet" href="/css/global.css">
     @yield('css')
-
+    
     {{-- ICONS --}}
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+    
     {{-- Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
+    
     {{-- Bootstrap --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -34,16 +34,16 @@
 
     <main>
         <div class="container-fluid">
-            <div class="row flex-nowrap">
+            <div class="row flex-nowrap main-row">
 
                 @include('layouts.sidebar')
 
-                <div class="col py-3 main-frame">
+                <div class="col py-3 main-frame overflow-auto">
 
                   @yield('content')
 
                   @if (session('alert'))
-                    <div class="col-12 m-0 d-flex justify-content-center" id="global-alert">
+                    <div class="col-12 m-0 d-flex justify-content-center global-alert">
                         <div class="alert alert-{{ session('type') }} alert-dismissible fade show" role="alert" style="width: 90%">
                             {{session('alert')}}
                             <button type="button" class="btn-close align-self-end" data-bs-dismiss="alert" aria-label="Close"></button>

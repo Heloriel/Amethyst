@@ -15,4 +15,9 @@ class Preg extends Model
         $formatted_date = str_replace('/','-', $value);
         $this->attributes['date'] = Carbon::parse($formatted_date)->format('Y-m-d');
     }
+
+    public function setPublicationAttribute($value) {
+        $formatted_date = str_replace('/','-', $value);
+        $this->attributes['publication'] = Carbon::parse($formatted_date)->format('Y-m-d');
+    }
 }

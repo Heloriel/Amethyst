@@ -43,7 +43,11 @@ class AmethystCoreController extends Controller
         $pregs_today = count(Preg::all()->where("date", "=", $this->today));
         $pregs_tomorrow = count(Preg::all()->where("date", "=", $this->tomorrow));
 
-        return view('home', ['pregs_today' => $pregs_today, 'pregs_tomorrow' => $pregs_tomorrow]);
+        return view('home', [
+            'pregs_today' => $pregs_today,
+            'pregs_tomorrow' => $pregs_tomorrow,
+            'portal' => $this->all_portals
+        ]);
     }
 
     public function manager_view(){
@@ -103,6 +107,7 @@ class AmethystCoreController extends Controller
         $preg->type = $request->type;
         $preg->portal = $request->portal;
         $preg->status = $request->status;
+        $preg->publication = $request->publication;
         $preg->date = $request->date;
         $preg->time = $request->time;
         $preg->obs = $request->obs;
@@ -110,6 +115,24 @@ class AmethystCoreController extends Controller
         $preg->save();
 
         return redirect('/create')->with('alert', 'Licitação cadastrada com sucesso!')->with('type', 'success');
+    }
+
+    public function preg_update(Request $request, $id){
+        $preg = Preg::where('id', $id)->first();
+        $preg->uasg = $request->uasg;
+        $preg->preg = $request->preg;
+        $preg->name = $request->name;
+        $preg->type = $request->type;
+        $preg->portal = $request->portal;
+        $preg->status = $request->status;
+        $preg->publication = $request->publication;
+        $preg->date = $request->date;
+        $preg->time = $request->time;
+        $preg->obs = $request->obs;
+        $preg->tags = 'disabled';
+        $preg->save();
+
+        return redirect('/manager')->with('alert', 'Licitação atualizada com sucesso!')->with('type', 'success');
     }
 
     public function preg_delete($id)

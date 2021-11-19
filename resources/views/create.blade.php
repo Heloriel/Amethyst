@@ -63,24 +63,32 @@
                     <label for="inputGroupSelect03">Situação</label>
                   </div>
         </div>
-        <div class="col-md-6 col-sm-12 mb-4">
-            <div class="input-group">
-                <input type="text" name="date" id="datepicker" placeholder="{{ $today_date }}" autocomplete="off" class="form-control custom-datepicker">
+        <div class="col-md-4 col-sm-12 mb-4">
+            <div class="form-floating">
+                <input type="text" name="publication" id="pubPicker" placeholder="{{ $today_date }}" autocomplete="off" class="form-control">
+                <label for="pubPicker" style="color: #92999F;">Data da Publicação</label>
             </div>
         </div>
-        <div class="col-md-6 col-sm-12 mb-4">
-            <div class="input-group">
+        <div class="col-md-4 col-sm-12 mb-4">
+            <div class="form-floating">
+                <input type="text" name="date" id="datepicker" placeholder="{{ $today_date }}" autocomplete="off" class="form-control custom-datepicker">
+                <label for="datepicker" style="color: #92999F;">Data da Disputa</label>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-4">
+            <div class="form-floating">
                 <input type="text" name="time" id="timepicker" placeholder="{{ $time_now }}" autocomplete="off" class="form-control custom-datepicker">
+                <label for="datepicker" style="color: #92999F;">Hora da Disputa</label>
             </div>
         </div>
         <div class="col-md-12 col-sm-12 mb-4">
             <div class="input-group">
-                <textarea class="form-control" name="obs" placeholder="OBSERVAÇÕES" rows="10" autocomplete="off"></textarea>
+                <textarea class="form-control" name="obs" placeholder="OBSERVAÇÕES" rows="8" autocomplete="off"></textarea>
             </div>
         </div>
         <div class="col-md-12 col-sm-12 mb-4">
             <div class="" id="hashtags-container">
-                <input type="text" id="hashtags" autocomplete="off" class="form-control" placeholder="TEMPORARY DISABLED" maxlength="25" disabled>
+                <input type="text" id="hashtags" autocomplete="off" class="form-control" placeholder="TAGS" maxlength="30">
                 <p class="my-2">Digite a TAG e pressione <kbd>TAB</kbd> ou <kbd>ENTER</kbd> para inserir.</p>
                 <div class="tag-container mt-3"></div>
             </div>

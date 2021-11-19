@@ -30,6 +30,8 @@ Route::get('create', [AmethystCoreController::class, 'create_view']);
 
 Route::post('create/save', [AmethystCoreController::class, 'preg_create']);
 
+Route::post('manager/update/{id}', [AmethystCoreController::class, 'preg_update']);
+
 /* ====================================================================== */
 
 Route::get('config/general', [AmethystAdminCore::class, 'general_config']);

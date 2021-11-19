@@ -27,12 +27,12 @@ $("#hashtags-container").on('keydown', '#hashtags', function(e) {
   }
 });
 
-$( function() {
-  $( "#datepicker" ).datepicker({ dateFormat: 'dd/mm/yy' });
-} );
-
 $(document).ready(function(){
   $('#timepicker').timepicker({
     timeFormat: 'HH:mm'
   });
+
+  $( "#datepicker" ).datepicker({ dateFormat: 'dd/mm/yy' });
+
+  $( "#pubPicker" ).datepicker({ dateFormat: 'dd/mm/yy' });
 });

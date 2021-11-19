@@ -19,7 +19,15 @@ class CreateStatuses extends Migration
             $table->string("name");
             $table->string("color");
         });
+
+        DB::table('statuses')->insert(
+        array(
+            'name' => 'Publicado',
+            'color' => 'grey'
+        ));
     }
+
+    
 
     /**
      * Reverse the migrations.
