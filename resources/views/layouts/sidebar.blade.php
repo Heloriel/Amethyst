@@ -7,9 +7,9 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="/manager" class="nav-link rounded-0 {{ (str_contains(url()->current(), 'manager')) ? 'active' : '' }} link-dark d-flex">
-          <ion-icon name="create-outline"></ion-icon> <span class="me-1">
-          GERENCIAR
+        <a href="/list" class="nav-link rounded-0 {{ (str_contains(url()->current(), 'list')) ? 'active' : '' }} link-dark d-flex">
+          <ion-icon name="list-outline"></ion-icon> <span class="me-1">
+          LISTAR
         </a>
       </li>
       <li class="nav-item">

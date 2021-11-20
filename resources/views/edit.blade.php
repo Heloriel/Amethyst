@@ -10,7 +10,7 @@
 
 @section('content')
 
-<form action="/manager/update/{{ $preg->id }}" method="post" id="addnew" >
+<form action="/list/update/{{ $preg->id }}" method="post" id="addnew" >
 @csrf
 <div class="container">
     <div class="row">
@@ -100,12 +100,12 @@
         </div>
         <div class="col-12 d-flex justify-content-between mb-5" id="actions">
             <div class="col-6">
-                <a class="btn btn-outline-danger rounded-pill" href="/manager" onClick="return confirm('Deseja realmente cancelar a edição?')">
+                <a class="btn btn-outline-danger rounded-pill" href="/list" onClick="return confirm('Deseja realmente cancelar a edição?')">
                     <ion-icon name="close-circle-outline"></ion-icon> CANCELAR
                 </a>
             </div>
             <div class="col-2 text-end">
-                <a class="btn btn-outline-danger rounded-pill" href="/manager/delete/{{ $preg->id }}" onClick="return confirm('Deseja realmente deletar o pregão {{ $preg->preg }} ?')">
+                <a class="btn btn-outline-danger rounded-pill" href="/list/delete/{{ $preg->id }}" onClick="return confirm('Deseja realmente deletar o pregão {{ $preg->preg }} ?')">
                     <ion-icon name="trash-outline"></ion-icon> EXCLUIR
                 </a>
             </div>

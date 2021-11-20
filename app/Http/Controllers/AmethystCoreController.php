@@ -50,7 +50,7 @@ class AmethystCoreController extends Controller
         ]);
     }
 
-    public function manager_view(){
+    public function list_view(){
 
         $fetch_all = DB::table('pregs')->where("date", ">=", $this->today)->orderBy('date')->orderBy('time')->paginate(20);
 
@@ -68,7 +68,7 @@ class AmethystCoreController extends Controller
         }
 
 
-        return view('manager', [
+        return view('list', [
             'today_date' => $this->today_formatted,
             'time_now' => $this->now,
             'fetch' => $fetch_all,

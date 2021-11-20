@@ -20,17 +20,17 @@ Route::get('/', [AmethystCoreController::class, 'index']);
 
 Route::get('home', [AmethystCoreController::class, 'home_view']);
 
-Route::get('manager', [AmethystCoreController::class, 'manager_view']);
+Route::get('list', [AmethystCoreController::class, 'list_view']);
 
-Route::get('manager/edit/{id}', [AmethystCoreController::class, 'edit_view']);
+Route::get('list/edit/{id}', [AmethystCoreController::class, 'edit_view']);
 
-Route::get('manager/delete/{id}', [AmethystCoreController::class, 'preg_delete']);
+Route::get('list/delete/{id}', [AmethystCoreController::class, 'preg_delete']);
 
 Route::get('create', [AmethystCoreController::class, 'create_view']);
 
 Route::post('create/save', [AmethystCoreController::class, 'preg_create']);
 
-Route::post('manager/update/{id}', [AmethystCoreController::class, 'preg_update']);
+Route::post('list/update/{id}', [AmethystCoreController::class, 'preg_update']);
 
 /* ====================================================================== */
 
