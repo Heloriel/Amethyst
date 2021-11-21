@@ -11,17 +11,6 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Procurar no portal..." aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-                    <select class="form-select" id="portalSearch">
-                        @foreach ($portal as $option_portal)
-                            <option value="{{ $option_portal->id }}">{{ $option_portal->name }}</option>
-                        @endforeach
-                    </select>
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"><ion-icon name="search-outline"></ion-icon></button>
-                  </div>
-            </div>
             <div class="col-md-4 col-sm-12">
                 <div class="card text-white bg-primary mb-3">
                     <div class="card-body">

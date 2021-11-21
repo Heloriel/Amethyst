@@ -18,19 +18,22 @@ use App\Http\Controllers\AmethystCoreController;
 
 Route::get('/', [AmethystCoreController::class, 'index']);
 
-Route::get('home', [AmethystCoreController::class, 'home_view']);
+Route::get('/home', [AmethystCoreController::class, 'view_home']);
 
-Route::get('list', [AmethystCoreController::class, 'list_view']);
+Route::get('/create', [AmethystCoreController::class, 'view_create']);
 
-Route::get('list/edit/{id}', [AmethystCoreController::class, 'edit_view']);
+Route::get('/biddings/list', [AmethystCoreController::class, 'view_biddings_list']);
 
-Route::get('list/delete/{id}', [AmethystCoreController::class, 'preg_delete']);
+Route::get('/budgets/list', [AmethystCoreController::class, 'view_budgets_list']);
 
-Route::get('create', [AmethystCoreController::class, 'create_view']);
+Route::get('/edit/{id}', [AmethystCoreController::class, 'view_edit']);
 
-Route::post('create/save', [AmethystCoreController::class, 'preg_create']);
+Route::get('/delete/{id}', [AmethystCoreController::class, 'preg_delete']);
 
-Route::post('list/update/{id}', [AmethystCoreController::class, 'preg_update']);
+Route::post('/create/save', [AmethystCoreController::class, 'preg_create']);
+
+Route::post('/edit/save/{id}', [AmethystCoreController::class, 'preg_update']);
+
 
 /* ====================================================================== */
 
