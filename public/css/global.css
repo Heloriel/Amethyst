@@ -2,86 +2,96 @@
     --amethyst-light: #f1dcff;
     --amethyst-medium: #c082e4;
     --amethyst-dark: #613986;
-  
+
     margin: 0;
     padding: 0;
     border: none;
     text-decoration: none;
     box-sizing: border-box;
-  }
+}
 
-  .notifications {
-    color: var(--amethyst-dark);
-  }
-  
-  .notifications ion-icon{
-    font-size: 1.5rem;
-  }
+.user-login-input {
+    background: url("/img/icons/user-white.svg") no-repeat;
+}
 
-  .notification-counter {
+.user-pass-input {
+    background: url("/img/icons/lock-white.svg") no-repeat;
+}
+
+.user-login-input,
+.user-pass-input {
+    background-position: 1rem center;
+    background-size: 1rem;
+}
+
+.notification-counter {
     z-index: 9999;
-  }
-  
-  .main-frame {
+}
+
+.navbar a {
+    font-size: 1rem;
+}
+
+.main-frame {
     background: #f2f2f2;
     padding-top: 2rem;
-  }
-  
-  .user-avatar {
+}
+
+.user-avatar {
     background: lightgrey;
     padding: 0.1rem;
-  }
+}
 
-  .navbar-search {
+.navbar-search {
     font-family: "Poppins", sans-serif;
     min-width: 450px;
     max-height: 2rem;
-  }
+}
 
-  .navbar-search::placeholder {
-    font-size: .9rem;
-  }
-  
-  .sidebar {
+.navbar-search::placeholder {
+    font-size: 0.9rem;
+}
+
+.sidebar {
     height: 100%;
-  }
-  
-  .sidebar a {
+}
+
+.sidebar a {
     align-items: center;
-  }
-  
-  .sidebar a:hover {
+}
+
+.sidebar a:hover {
     background: var(--amethyst-light);
     cursor: pointer;
-  }
+}
 
-  .active{
+.active {
     background-color: var(--amethyst-dark) !important;
-  }
+}
 
-  .submenu-active{
+.submenu-active {
     background-color: var(--amethyst-light);
-  }
-  
-  .sidebar ion-icon{
-    font-size: 1.2rem;
-    margin-right: 1rem;
-  }
-  
-  .submenu a:hover,
-  .sidebar #dropdownUser2:hover {
+}
+
+.sidebar svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.submenu a:hover,
+.sidebar #dropdownUser2:hover {
     background-color: transparent;
-  }
-  
-  .global-alert {
+}
+
+.global-alert {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     z-index: 999999;
-  }
-  
-  .main-row{
+}
+
+.main-row {
     height: calc(100vh - 3.031rem);
     max-height: calc(100vh - 3.031rem);
-  }
+}

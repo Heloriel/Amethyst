@@ -16,17 +16,18 @@ class CreatePregs extends Migration
         Schema::create('pregs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('uasg');
+            $table->string('uasg')->nullable();
             $table->string('preg');
             $table->string('name');
-            $table->integer('type');
-            $table->integer('portal');
-            $table->integer('status');
-            $table->date('publication');
-            $table->date('date');
-            $table->time('time');
-            $table->text('obs');
-            $table->text('tags');
+            $table->integer('type')->nullable();
+            $table->integer('portal')->nullable();
+            $table->integer('status')->nullable();
+            $table->date('publication')->nullable();
+            $table->date('date')->nullable();
+            $table->time('time')->nullable();
+            $table->text('obs')->nullable();
+            $table->text('tags')->nullable();
+            $table->boolean('budget');
         });
     }
 
