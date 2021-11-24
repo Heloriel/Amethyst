@@ -164,7 +164,7 @@ class AmethystCoreController extends Controller
         $preg->tags = $request->tags;
         $preg->save();
 
-        $redirect_to = ($preg->budget == 1) ? 'biddings' : 'budgets';
+        $redirect_to = ($preg->budget == 1) ? 'budgets' : 'biddings';
         return redirect($redirect_to.'/list')->with('alert', 'Registro alterado com sucesso!')->with('type', 'success')->with('aicon', 'edit-3');
     }
 
@@ -172,7 +172,7 @@ class AmethystCoreController extends Controller
     {
         $preg = Preg::where('id', $id)->first();
         $preg->delete();
-        $redirect_to = ($preg->budget == 1) ? 'biddings' : 'budgets';
+        $redirect_to = ($preg->budget == 1) ? 'budgets' : 'biddings';
         return redirect($redirect_to.'/list')->with('alert', 'Registro deletado com sucesso!')->with('type', 'danger')->with('aicon', 'trash');
     }
 

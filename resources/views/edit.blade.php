@@ -111,7 +111,9 @@
             <small><p class="my-2">Digite a TAG e pressione <kbd>TAB</kbd> ou <kbd>ENTER</kbd> para inserir.</p></small>
                 <div class="tag-container mt-3">
                     @foreach ($tags as $individual_tag)
+                        @if($individual_tag)
                             <p class="tag">{{ $individual_tag }}</p>
+                        @endif
                     @endforeach
                 </div>
             </div>
