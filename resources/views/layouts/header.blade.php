@@ -14,7 +14,7 @@
             </form>
         </div>
         <div class="nav-item mx-4 notifications">
-            <a href="#" class="" role="button" id="dropdownNotifications" data-bs-toggle="dropdown"
+            <a href="#" class="link-dark" role="button" id="dropdownNotifications" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 <i data-feather="bell"></i>
             </a>

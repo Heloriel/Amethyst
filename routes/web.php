@@ -41,4 +41,6 @@ Route::get('config/general', [AmethystAdminCore::class, 'general_config']);
 
 Route::get('config/status', [AmethystAdminCore::class, 'status_config']);
 
+Route::post('config/status/save', [AmethystAdminCore::class, 'save_status']);
+
 Route::get('config/portal', [AmethystAdminCore::class, 'portal_config']);

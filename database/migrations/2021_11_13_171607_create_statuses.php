@@ -22,16 +22,16 @@ class CreateStatuses extends Migration
             $table->string("color");
         });
 
-        DB::table('statuses')->insert(array('name' => 'Publicado', 'color' => 'darkgrey'));
-        DB::table('statuses')->insert(array('name' => 'Aguardando Documentação', 'color' => 'orange'));
-        DB::table('statuses')->insert(array('name' => 'Aguardando Disputa', 'color' => 'lightslategray'));
-        DB::table('statuses')->insert(array('name' => 'Em Disputa', 'color' => 'red'));
-        DB::table('statuses')->insert(array('name' => 'Acompanhamento', 'color' => 'gold'));
-        DB::table('statuses')->insert(array('name' => 'Habilitação', 'color' => 'darkseagreen'));
-        DB::table('statuses')->insert(array('name' => 'Homologado', 'color' => 'green'));
-        DB::table('statuses')->insert(array('name' => 'Encerrado', 'color' => 'darkred'));
-        DB::table('statuses')->insert(array('name' => 'Cancelado', 'color' => 'black'));
-        DB::table('statuses')->insert(array('name' => 'Desclassificado', 'color' => 'black'));
+        DB::table('statuses')->insert(array('name' => 'Publicado', 'color' => '#A9A9A9'));
+        DB::table('statuses')->insert(array('name' => 'Aguardando Documentação', 'color' => '#FF8C00'));
+        DB::table('statuses')->insert(array('name' => 'Aguardando Disputa', 'color' => '#778899'));
+        DB::table('statuses')->insert(array('name' => 'Em Disputa', 'color' => '#FF0000'));
+        DB::table('statuses')->insert(array('name' => 'Acompanhamento', 'color' => '#FFD700'));
+        DB::table('statuses')->insert(array('name' => 'Habilitação', 'color' => '#8FBC8F'));
+        DB::table('statuses')->insert(array('name' => 'Homologado', 'color' => '#008000'));
+        DB::table('statuses')->insert(array('name' => 'Encerrado', 'color' => '#8B0000'));
+        DB::table('statuses')->insert(array('name' => 'Cancelado', 'color' => '#000000'));
+        DB::table('statuses')->insert(array('name' => 'Desclassificado', 'color' => '#000000'));
     }
 
 
