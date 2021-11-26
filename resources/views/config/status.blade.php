@@ -13,17 +13,12 @@
         <div class="row">
             <div class="col-12 mb-3">
                 @foreach ($status as $statuses)
-                    <div class="input-group mb-2 d-flex align-items-center">
-                        <input type="hidden" name="status[]" value="{{ $statuses->id }}">
-                        <input type="text" name="status[]" aria-label="Nome" placeholder="NOME" class="form-control" value="{{ $statuses->name }}">
-                        <input type="color" name="status[]" class="form-control form-control-color" id="" value="{{ $statuses->color }}" title="Escolha a Cor" style="max-width: 50px">
-                            <a href="#" class="link-danger p-0 ms-2" id="add-status-btn"><i data-feather="x"></i></a>
+                    <div class="input-group mb-2 d-flex align-items-center" id="statusContainer">
+                        <input type="text" name="name" id="name-{{$statuses->id}}" value="{{ $statuses->name }}" aria-label="Nome" placeholder="NOME" class="form-control">
+                        <input type="color" name="color" id="color-{{$statuses->id}}" value="{{ $statuses->color }}" title="Escolha a Cor" style="max-width: 40px" class="form-control form-control-color">
+                        <a href="#" class="link-danger p-0 ms-2" id="add-status-btn"><i data-feather="x"></i></a>
                     </div>
                 @endforeach
-            </div>
-
-            <div id="statusContainer" class="">
-
             </div>
 
             <div class="col-12 mb-3 d-flex justify-content-center">
@@ -37,14 +32,16 @@
                 </a>
             </div>
             <div class="col-6 d-flex justify-content-end my-5">
-                <button class="btn btn-outline-success rounded-pill">
-                    SALVAR <i data-feather="check-circle" class="ms-2"></i></button>
+                <button class="btn btn-outline-success rounded-pill" id="save">
+                    SALVAR <i data-feather="check-circle" class="ms-2"></i>
+                </button>
             </div>
         </div>
     </div>
+    <input type="hidden" name="statusJson" id="statusJson" value="{{ $status_json }}">
 </form>
 @endsection
 
 @section('afterFooter')
-
+<script src="/js/configStatus.js"></script>
 @endsection
