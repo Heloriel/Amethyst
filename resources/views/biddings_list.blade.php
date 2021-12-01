@@ -29,9 +29,15 @@
     @foreach ($fetch as $fetch_result)
     <tr class="@if(date('d/m/Y', strtotime($fetch_result->date)) == $today_date && date('H:i', strtotime($fetch_result->time)) <= $time_now ) table-danger @endif">
         <th scope="row">
+            @if (isset($status[$fetch_result->status]))
             <span class="badge ms-2 p-2 rounded-circle" title="{{ $status[$fetch_result->status][0] }}" style="background-color: {{ $status[$fetch_result->status][1] }};">
                 <span class="visually-hidden">{{ $status[$fetch_result->status][0] }}</span>
             </span>
+            @else
+            <span class="badge ms-2 p-2 rounded-circle" title="Sem Status" style="background-color: black;">
+                <span class="visually-hidden">Sem Status</span>
+            </span>
+            @endif
         </th>
       <td>{{ $portal[$fetch_result->portal][0] }}</td>
       <td>{{ $fetch_result->uasg }}</td>

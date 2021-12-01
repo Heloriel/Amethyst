@@ -121,12 +121,12 @@
         </div>
         <div class="col-12 d-flex justify-content-between align-items-center mb-5" id="actions">
             <div class="col-6">
-                <a class="btn btn-outline-danger rounded-pill d-inline-flex justify-content-between align-items-center" href="/list" onClick="return confirm('Deseja realmente cancelar a edição?')">
+                <a class="btn btn-outline-danger rounded-pill d-inline-flex justify-content-between align-items-center" href="/{{ $preg->budget ? 'budgets' : 'biddings' }}/list/" onClick="return confirm('Deseja realmente cancelar a edição?')">
                     CANCELAR <i data-feather="x-circle" class="ms-2"></i>
                 </a>
             </div>
             <div class="col-2 text-end">
-                <a class="btn btn-outline-danger rounded-pill d-inline-flex justify-content-between align-items-center" href="/list/delete/{{ $preg->id }}" onClick="return confirm('Deseja realmente deletar o pregão {{ $preg->preg }} ?')">
+                <a class="btn btn-outline-danger rounded-pill d-inline-flex justify-content-between align-items-center" href="/delete/{{ $preg->id }}" onClick="return confirm('Deseja realmente deletar o pregão {{ $preg->preg }} ?')">
                     EXCLUIR <i data-feather="trash" class="ms-2"></i>
                 </a>
             </div>

@@ -43,4 +43,6 @@ Route::get('config/status', [AmethystAdminCore::class, 'status_config']);
 
 Route::post('config/status/save', [AmethystAdminCore::class, 'save_status']);
 
+Route::get('config/status/delete/{id}', [AmethystAdminCore::class, 'delete_status']);
+
 Route::get('config/portal', [AmethystAdminCore::class, 'portal_config']);

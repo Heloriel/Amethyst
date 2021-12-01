@@ -16,7 +16,7 @@
                     <div class="input-group mb-2 d-flex align-items-center" id="statusContainer">
                         <input type="text" name="name" id="name-{{$statuses->id}}" value="{{ $statuses->name }}" aria-label="Nome" placeholder="NOME" class="form-control">
                         <input type="color" name="color" id="color-{{$statuses->id}}" value="{{ $statuses->color }}" title="Escolha a Cor" style="max-width: 40px" class="form-control form-control-color">
-                        <a href="#" role="button" id="id-{{$statuses->id}}" class="link-danger p-0 ms-2" onClick="deleteStatus(this);"><i data-feather="x"></i></a>
+                        <a href="/config/status/delete/{{$statuses->id}}" class="link-danger p-0 ms-2"><i data-feather="x"></i></a>
                     </div>
                 @endforeach
             </div>

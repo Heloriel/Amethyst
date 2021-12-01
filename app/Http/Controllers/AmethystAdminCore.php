@@ -47,4 +47,12 @@ class AmethystAdminCore extends Controller
         }
         return redirect('/config/status')->with('alert', 'Lista de situações atualizada com sucesso!')->with('type', 'success')->with('aicon', 'check-circle');
     }
+
+    public function delete_status($id)
+    {
+        $stts = Status::where('id', $id)->first();
+        $stts->delete();
+        return redirect('/config/status')->with('alert', 'Registro deletado com sucesso!')->with('type', 'danger')->with('aicon', 'trash');
+    }
+
 }
