@@ -11,7 +11,7 @@
     @csrf
     <div class="container">
         <div class="row">
-            <div class="col-12 mb-3">
+            <div class="col-12 mb-3" id="status-container">
                 @foreach ($status as $statuses)
                     <div class="input-group mb-2 d-flex align-items-center" id="statusContainer">
                         <input type="text" name="name" id="name-{{$statuses->id}}" value="{{ $statuses->name }}" aria-label="Nome" placeholder="NOME" class="form-control">
@@ -22,8 +22,7 @@
             </div>
 
             <div class="col-12 mb-3 d-flex justify-content-center">
-                <button class="btn btn-outline-dark rounded-circle p-1" id="add-status-btn"><i
-                        data-feather="plus"></i></button>
+                <a href="#" class="btn btn-outline-dark rounded-circle p-1" id="add-status-btn" onclick="addNewStatusField()"><i data-feather="plus"></i></a>
             </div>
             <div class="col-6 d-flex justify-content-start my-5">
                 <a class="btn btn-outline-danger rounded-pill d-inline-flex justify-content-between align-items-center"
