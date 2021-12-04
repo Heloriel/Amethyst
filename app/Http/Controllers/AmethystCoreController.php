@@ -79,7 +79,7 @@ class AmethystCoreController extends Controller
             'today_date' => $this->today_formatted,
             'time_now' => $this->now,
             'fetch' => $fetch_all,
-            'status' => $status_array,
+            'status' => isset($status_array) ? $status_array : "",
             'portal' => $portal_array
         ]);
     }

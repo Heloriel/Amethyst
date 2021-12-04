@@ -39,10 +39,20 @@ Route::post('/edit/save/{id}', [AmethystCoreController::class, 'preg_update']);
 
 Route::get('config/general', [AmethystAdminCore::class, 'general_config']);
 
+Route::get('config/', [AmethystAdminCore::class, 'general_config_redirect']);
+
 Route::get('config/status', [AmethystAdminCore::class, 'status_config']);
 
 Route::post('config/status/save', [AmethystAdminCore::class, 'save_status']);
 
+Route::get('config/status/create', [AmethystAdminCore::class, 'create_status']);
+
 Route::get('config/status/delete/{id}', [AmethystAdminCore::class, 'delete_status']);
 
 Route::get('config/portal', [AmethystAdminCore::class, 'portal_config']);
+
+Route::post('config/portal/save', [AmethystAdminCore::class, 'save_portal']);
+
+Route::get('config/portal/create', [AmethystAdminCore::class, 'create_portal']);
+
+Route::get('config/portal/delete/{id}', [AmethystAdminCore::class, 'delete_portal']);

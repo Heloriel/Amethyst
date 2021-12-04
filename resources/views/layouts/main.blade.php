@@ -43,12 +43,18 @@
 
                   @if (session('alert'))
                     <div class="col-12 m-0 d-flex justify-content-center global-alert">
-                        <div class="alert @if(session('type'))alert-{{ session('type') }}@else alert-primary @endif alert-dismissible fade show" role="alert" style="width: 90%">
-                            @if (session('aicon'))
-                                <i data-feather="{{session('aicon')}}"></i>
-                            @endif
-                            {{session('alert')}}
-                            <button type="button" class="btn-close align-self-end" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <div class="alert @if(session('type'))alert-{{ session('type') }}@else alert-primary @endif alert-dismissible fade show p-0" role="alert" style="width: 90%">
+                            <div class="p-3">
+                                @if (session('aicon'))
+                                    <i data-feather="{{session('aicon')}}"></i>
+                                @endif
+                                {{session('alert')}}
+                                <button type="button" class="btn-close align-self-end" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            <div class="progress" style="height: 3px;">
+                                <div class="progress-bar bg-{{ session('type') }}" role="progressbar" style="width: 0%;"
+                                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
                         </div>
                     </div>
                   @endif
