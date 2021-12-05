@@ -47,11 +47,11 @@ class AmethystCoreController extends Controller
     {
 
         $pregs_today = count(Preg::all()->where("date", "=", $this->today));
-        $pregs_tomorrow = count(Preg::all()->where("date", "=", $this->tomorrow));
+        $pregs_next = count(Preg::all()->where("date", ">", $this->today));
 
         return view('home', [
             'pregs_today' => $pregs_today,
-            'pregs_tomorrow' => $pregs_tomorrow,
+            'pregs_next' => $pregs_next,
             'portal' => $this->all_portals
         ]);
     }

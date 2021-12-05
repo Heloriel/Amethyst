@@ -68,21 +68,21 @@
 
                 <div class="col-sm-12 col-md-4 mb-4">
                     <div class="form-floating">
-                        <input type="text" name="publication" id="pubPicker" placeholder="{{ $today_date }}"
-                            autocomplete="off" class="form-control" maxlength="10" onClick="this.select();">
+                        <input type="date" name="publication" placeholder="{{ $today_date }}"
+                            autocomplete="off" class="form-control" maxlength="10">
                         <label for="pubPicker" style="color: #92999F;" id="publicationLabel">Data Publicação</label>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-4 mb-4">
                     <div class="form-floating">
-                        <input type="text" name="date" id="datepicker" placeholder="{{ $today_date }}" autocomplete="off"
-                            class="form-control custom-datepicker" maxlength="10" onClick="this.select();">
+                        <input type="date" name="date" placeholder="{{ $today_date }}" autocomplete="off"
+                            class="form-control" maxlength="10">
                         <label for="datepicker" style="color: #92999F;" id="datePickerLabel">Data Disputa</label>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-4 mb-4">
                     <div class="form-floating">
-                        <input type="text" name="time" id="timepicker" placeholder="{{ $time_now }}" autocomplete="off"
+                        <input type="time" name="time" id="timepicker" placeholder="{{ $time_now }}" autocomplete="off"
                             class="form-control custom-datepicker" maxlength="5" onClick="this.select();">
                         <label for="datepicker" style="color: #92999F;">Hora da Disputa</label>
                     </div>

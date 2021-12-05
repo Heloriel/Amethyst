@@ -29,9 +29,9 @@
             <div class="col-md-4 col-sm-12">
                 <div class="card text-white bg-success mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Disputas Amanhã:</h5>
+                        <h5 class="card-title">Disputas Futuras:</h5>
                         <p class="card-text text-center">
-                            <b>{{ $pregs_tomorrow}}</b>
+                            <b>{{ $pregs_next}}</b>
                         </p>
                         <p class="card-text">
                         <div class="d-grid">

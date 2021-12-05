@@ -95,3 +95,7 @@
     height: calc(100vh - 3.031rem);
     max-height: calc(100vh - 3.031rem);
 }
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+}

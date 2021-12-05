@@ -76,13 +76,13 @@
         </div>
         <div class="col-md-4 col-sm-12 mb-4">
             <div class="form-floating">
-                <input type="text" name="publication" value="{{ date('d/m/Y', strtotime($preg->publication)) }}" id="pubPicker" placeholder="{{ $today_date }}" autocomplete="off" class="form-control">
+                <input type="date" name="publication" value="{{ $preg->publication }}" autocomplete="off" class="form-control">
                 <label for="pubPicker" style="color: #92999F;">Data da Publicação</label>
             </div>
         </div>
         <div class="col-md-4 col-sm-12 mb-4">
             <div class="form-floating">
-                <input type="text" name="date" value="{{ date('d/m/Y', strtotime($preg->date)) }}" id="datepicker" placeholder="{{ $today_date }}" autocomplete="off" class="form-control custom-datepicker">
+                <input type="date" name="date" value="{{ $preg->date  }}" autocomplete="off" class="form-control custom-datepicker">
                 <label for="datepicker" style="color: #92999F;">Data da Disputa</label>
             </div>
         </div>
@@ -99,10 +99,12 @@
         </div>
         <div class="col-12 mb-4">
             <div class="form-check">
-                <input class="form-check-input" name="budget" type="checkbox" value="1" id="isBudget" @if($preg->budget) checked @endif disabled>
+                {{-- <input class="form-check-input" name="budget" type="checkbox" value="1" id="isBudget" @if($preg->budget) checked @endif disabled>
                 <label class="form-check-label" for="isBudget">
                     ORÇAMENTO
-                </label>
+                </label> --}}
+                <span class="badge rounded-pill p-2 @if($preg->budget) bg-success @else bg-primary @endif">@if($preg->budget) Orçamento @else Licitação @endif</span>
+                <input type="hidden" name="budget" value="{{ $preg->budget }}">
             </div>
         </div>
         <div class="col-md-12 col-sm-12 mb-4">
