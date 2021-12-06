@@ -47,7 +47,7 @@
         <a href="#" class="link-primary me-3"><i data-feather="eye"></i></a>
         <a href="/edit/{{ $fetch_result->id }}" class="link-dark me-3"><i data-feather="edit"></i></a>
         <a href="/delete/{{ $fetch_result->id }}" class="link-danger me-3" onClick="return confirm('Deseja realmente deletar o registro {{ $fetch_result->preg }} ?')"><i data-feather="trash"></i></a>
-        <a href="#" class="link-secondary me-3"><i data-feather="external-link"></i></a>
+        <a href="http://comprasnet.gov.br/livre/Pregao/lista_pregao.asp?Opc=0&rdTpPregao=E&co_uasg={{$fetch_result->uasg}}&numprp={{$fetch_result->preg}}" class="link-secondary me-3" target="_blank"><i data-feather="external-link"></i></a>
       </td>
     </tr>
     @endforeach

@@ -20,7 +20,7 @@
             <div class="col-12 mb-3">
                 @foreach ($status as $statuses)
                     <div class="input-group mb-2 d-flex align-items-center">
-                        <input type="color" name="color" id="color-{{$statuses->id}}" value="{{ $statuses->color }}" title="Escolha a Cor" style="max-width: 40px; padding: 5px;" class="form-control form-control-color">
+                        <input type="color" name="color" id="color-{{$statuses->id}}" value="{{ $statuses->color }}" title="{{ $statuses->color }}" style="max-width: 40px; padding: 5px;" class="form-control form-control-color">
                         <input type="text" name="name" id="name-{{$statuses->id}}" value="{{ $statuses->name }}" aria-label="Nome" placeholder="NOME" class="form-control">
                         <a href="/config/status/delete/{{$statuses->id}}" class="btn btn-danger p-0" type="button" style="padding: 5px !important;"><i data-feather="x"></i></a>
                     </div>
