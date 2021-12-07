@@ -9,11 +9,20 @@
 @section('content')
 <div class="container-fluid">
 
-  <div class="input-group mb-3">
-    <input type="text" class="form-control rounded-pill" placeholder="Procurar..." aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-  </div>
+    <div class="row">
+        <div class="col-8">
+            <input type="text" class="form-control rounded-pill" placeholder="Procurar..." aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+        </div>
+        <div class="col-4">
+            <select name="statusFilter" id="" class="form-control rounded-pill">
+                @foreach ($all_status as $option_status)
+                <option value="{{ $option_status->id }}">{{ $option_status->name }}</option>
+                @endforeach
+            </select>
+        </div>
+    </div>
 
-<table class="table align-middle table-hover table-sm table-responsive">
+<table class="table align-middle table-hover table-sm table-responsive mt-2">
     <thead>
       <tr>
         <th scope="col">Situação</th>

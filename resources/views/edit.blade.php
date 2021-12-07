@@ -99,10 +99,6 @@
         </div>
         <div class="col-12 mb-4">
             <div class="form-check">
-                {{-- <input class="form-check-input" name="budget" type="checkbox" value="1" id="isBudget" @if($preg->budget) checked @endif disabled>
-                <label class="form-check-label" for="isBudget">
-                    ORÇAMENTO
-                </label> --}}
                 <span class="badge rounded-pill p-2 @if($preg->budget) bg-success @else bg-primary @endif">@if($preg->budget) Orçamento @else Licitação @endif</span>
                 <input type="hidden" name="budget" value="{{ $preg->budget }}">
             </div>
