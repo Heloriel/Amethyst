@@ -21,10 +21,11 @@
 
                     <div class="col-12 col-md-4 text-center">
                         <img src="img/Logo-alt.svg" alt="Logo" id="logo">
-                        <form action="/" method="get">
-                            <input type="text" class="form-control bg-transparent text-white rounded-pill mb-5 ps-5 user-login-input" placeholder="USUÁRIO" aria-label="Usuário"
+                        <form action="/login/auth" method="post">
+                            @csrf
+                            <input type="text" name="name" class="form-control bg-transparent text-white rounded-pill mb-5 ps-5 user-login-input" placeholder="USUÁRIO" aria-label="Usuário"
                                 aria-describedby="basic-addon1">
-                            <input type="password" class="form-control bg-transparent text-white rounded-pill mb-5 ps-5 user-pass-input" placeholder="SENHA" aria-label="Senha"
+                            <input type="password" name="password" class="form-control bg-transparent text-white rounded-pill mb-5 ps-5 user-pass-input" placeholder="SENHA" aria-label="Senha"
                                 aria-describedby="basic-addon1">
                             <div class="d-grid gap-2">
                                 <input type="submit" value="ENTRAR" class="btn btn-outline-light btn-block rounded-pill">

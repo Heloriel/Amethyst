@@ -92,7 +92,7 @@
                 <li>
                     <h6 class="dropdown-header">Menu</h6>
                 </li>
-                <li><a class="dropdown-item" href="/">Sair</a></li>
+                <li><a class="dropdown-item" href="/logout">Sair</a></li>
             </ul>
         </div>
     </div>
