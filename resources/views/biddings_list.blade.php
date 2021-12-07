@@ -14,9 +14,9 @@
             <input type="text" class="form-control rounded-pill" placeholder="Procurar..." aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
         </div>
         <div class="col-4">
-            <select name="statusFilter" id="" class="form-control rounded-pill">
+            <select name="statusFilter" id="" class="form-control rounded-pill" onchange="filter(this.value)">
                 @foreach ($all_status as $option_status)
-                <option value="{{ $option_status->id }}">{{ $option_status->name }}</option>
+                    <option value="{{ $option_status->id }}">{{ $option_status->name }}</option>
                 @endforeach
             </select>
         </div>
