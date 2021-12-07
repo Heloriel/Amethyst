@@ -47,7 +47,9 @@
         <a href="#" class="link-primary me-3"><i data-feather="eye"></i></a>
         <a href="/edit/{{ $fetch_result->id }}" class="link-dark me-3"><i data-feather="edit"></i></a>
         <a href="/delete/{{ $fetch_result->id }}" class="link-danger me-3" onClick="return confirm('Deseja realmente deletar o registro {{ $fetch_result->preg }} ?')"><i data-feather="trash"></i></a>
+        @if(!empty($direct_url[$fetch_result->id]))
         <a href="{{ $direct_url[$fetch_result->id] }}" class="link-secondary me-3" target="_blank"><i data-feather="external-link"></i></a>
+        @endif
       </td>
     </tr>
     @endforeach

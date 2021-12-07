@@ -78,8 +78,9 @@ class AmethystCoreController extends Controller
         foreach($fetch_all as $fa){
             $to_replace = array('DATA_UASG', 'DATA_PREG');
             $replacer = array($fa->uasg, $fa->preg);
-            $this->direct_url[$fa->id] = str_replace($to_replace, $replacer, $portal_array[$fa->id][2]);
+            $this->direct_url[$fa->id] = str_replace($to_replace, $replacer, $portal_array[$fa->portal][2]);
         }
+
 
         return view('biddings_list', [
             'today_date' => $this->today_formatted,
@@ -118,6 +119,9 @@ class AmethystCoreController extends Controller
         $fetch = Preg::where('id', $id)->first();
         $tags_array =  explode(',', $fetch->tags);
         $tags_count = count($tags_array);
+        $to_replace = array('DATA_UASG', 'DATA_PREG');
+        $replacer = array($fetch->uasg, $fetch->preg);
+        $this->direct_url = str_replace($to_replace, $replacer, $this->all_portals[$fetch->portal - 1]->direct_url);
 
         return view('edit', [
             'today_date' => $this->today_formatted,
@@ -127,7 +131,8 @@ class AmethystCoreController extends Controller
             'portal' => $this->all_portals,
             'tags' => $tags_array,
             'tags_count' => $tags_count,
-            'type' => $this->all_types
+            'type' => $this->all_types,
+            'direct_url' => $this->direct_url
         ]);
     }
     //#region

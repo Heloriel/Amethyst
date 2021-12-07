@@ -133,9 +133,11 @@
                 </a>
             </div>
             <div class="col-2 text-end">
-                <a href="#" class="btn btn-outline-primary rounded-pill d-inline-flex justify-content-between align-items-center">
+                @if(!empty($direct_url))
+                <a href="{{$direct_url}}" class="btn btn-outline-primary rounded-pill d-inline-flex justify-content-between align-items-center">
                    ABRIR <i data-feather="external-link" class="ms-2"></i>
                 </a>
+                @endif
             </div>
             <div class="col-2 text-end">
                 <button class="btn btn-outline-success rounded-pill d-inline-flex justify-content-between align-items-center">
