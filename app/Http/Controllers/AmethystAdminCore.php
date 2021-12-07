@@ -95,9 +95,10 @@ class AmethystAdminCore extends Controller
 
             $old_portals = Portal::get()->where('id', '=', $new_portals->id)->first();
 
-            if($new_portals->name != $old_portals->name || $new_portals->base_url != $old_portals->base_url){
+            if($new_portals->name != $old_portals->name || $new_portals->base_url != $old_portals->base_url || $new_portals->direct_url != $old_portals->direct_url){
                 $old_portals->name = $new_portals->name;
                 $old_portals->base_url = $new_portals->base_url;
+                $old_portals->direct_url = $new_portals->direct_url;
                 $old_portals->save();
             }
         }
@@ -116,6 +117,7 @@ class AmethystAdminCore extends Controller
         $portal = new Portal();
         $portal->name = "";
         $portal->base_url = "";
+        $portal->direct_url = "";
         $portal->save();
 
         return redirect('/config/portal');

@@ -12,13 +12,37 @@
     <div class="container">
         <div class="row">
             <div class="col-12 mb-3">
+                <div class="accordion" id="accordionPortal">
                 @foreach ($portal as $portals)
-                    <div class="input-group mb-2 d-flex align-items-center" id="portalContainer">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#portalCollapse-{{$portals->id}}" aria-expanded="true" aria-controls="collapseOne">
+                            {{ $portals->name }}
+                        </button>
+                      </h2>
+                      <div id="portalCollapse-{{$portals->id}}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionPortal">
+                        <div class="accordion-body">
+                            <label for="name-{{$portals->id}}">Nome</label>
+                            <input type="text" name="name" id="name-{{$portals->id}}" value="{{ $portals->name }}" aria-label="Nome" placeholder="NOME" class="form-control mb-2">
+                            <label for="url-{{$portals->id}}">URL Base</label>
+                            <input type="text" name="base_url" id="url-{{$portals->id}}" value="{{ $portals->base_url }}" aria-label="Url" placeholder="URL" class="form-control mb-2">
+                            <label for="durl-{{$portals->id}}">URL Direta</label>
+                            <input type="text" name="direct_url" id="durl-{{$portals->id}}" value="{{ $portals->direct_url }}" aria-label="Url" placeholder="URL" class="form-control mb-2">
+                            <div class="d-block text-end">
+                                <a href="{{$portals->base_url}}" target="_blank" class="btn btn-outline-primary rounded-circle p-0 mx-1" type="button" style="padding: 5px !important;"><i data-feather="globe"></i></a>
+                                <a href="/config/portal/delete/{{$portals->id}}" class="btn btn-outline-danger rounded-circle p-0 mx-1" onclick="return confirm('Deseja realmente deletar o registro o portal {{$portals->name}} ?')" type="button" style="padding: 5px !important;"><i data-feather="x"></i></a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                {{-- <div class="input-group mb-2 d-flex align-items-center" id="portalContainer">
                         <input type="text" name="name" id="name-{{$portals->id}}" value="{{ $portals->name }}" aria-label="Nome" placeholder="NOME" class="form-control">
                         <input type="text" name="base_url" id="url-{{$portals->id}}" value="{{ $portals->base_url }}" aria-label="Url" placeholder="URL" class="form-control">
+                        <input type="text" name="direct_url" id="url-{{$portals->id}}" value="{{ $portals->direct_url }}" aria-label="Url" placeholder="URL" class="form-control">
                         <a href="/config/portal/delete/{{$portals->id}}" class="btn btn-danger p-0" type="button" style="padding: 5px !important;"><i data-feather="x"></i></a>
-                    </div>
+                    </div> --}}
                 @endforeach
+                </div>
             </div>
 
             <div class="col-12 mb-3 d-flex justify-content-center">
@@ -44,3 +68,5 @@
 @section('afterFooter')
 <script src="/js/configPortals.js"></script>
 @endsection
+
+

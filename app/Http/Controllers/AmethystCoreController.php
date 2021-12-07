@@ -22,6 +22,7 @@ class AmethystCoreController extends Controller
     private $all_status;
     private $all_portals;
     private $all_types;
+    private $direct_url;
     //#region
 
     #region CONSTRUCTOR
@@ -67,20 +68,26 @@ class AmethystCoreController extends Controller
             $status_array[$value->id] = [$name, $color];
         }
 
-
         foreach ($this->all_portals as $value) {
             $name = $value->name;
             $url = $value->base_url;
-            $portal_array[$value->id] = [$name, $url];
+            $durl = $value->direct_url;
+            $portal_array[$value->id] = [$name, $url, $durl];
         }
 
+        foreach($fetch_all as $fa){
+            $to_replace = array('DATA_UASG', 'DATA_PREG');
+            $replacer = array($fa->uasg, $fa->preg);
+            $this->direct_url[$fa->id] = str_replace($to_replace, $replacer, $portal_array[$fa->id][2]);
+        }
 
         return view('biddings_list', [
             'today_date' => $this->today_formatted,
             'time_now' => $this->now,
             'fetch' => $fetch_all,
             'status' => isset($status_array) ? $status_array : "",
-            'portal' => $portal_array
+            'portal' => $portal_array,
+            'direct_url' => $this->direct_url
         ]);
     }
 

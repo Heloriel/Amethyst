@@ -20,11 +20,24 @@ class CreatePortals extends Migration
             $table->timestamps();
             $table->string("name");
             $table->text('base_url');
+            $table->text('direct_url');
         });
 
-        DB::table('portals')->insert(array('name' => 'Comprasnet', 'base_url' => 'www.comprasnet.gov.br/'));
-        DB::table('portals')->insert(array('name' => 'Licitações-E', 'base_url' => 'www.licitacoes-e.com.br/'));
-        DB::table('portals')->insert(array('name' => 'BEC-SP', 'base_url' => 'https://www.bec.sp.gov.br/'));
+        DB::table('portals')->insert(array(
+            'name' => 'Comprasnet',
+            'base_url' => 'https://www.gov.br/compras/pt-br/',
+            'direct_url' => 'http://comprasnet.gov.br/livre/Pregao/lista_pregao.asp?Opc=0&rdTpPregao=E&co_uasg=DATA_UASG&numprp=DATA_PREG'
+        ));
+        DB::table('portals')->insert(array(
+            'name' => 'Licitações-E',
+            'base_url' => 'http://www.licitacoes-e.com.br/',
+            'direct_url' => 'http://comprasnet.gov.br/livre/Pregao/lista_pregao.asp?Opc=0&rdTpPregao=E&co_uasg=DATA_UASG&numprp=DATA_PREG'
+        ));
+        DB::table('portals')->insert(array(
+            'name' => 'BEC-SP',
+            'base_url' => 'https://www.bec.sp.gov.br/',
+            'direct_url' => 'http://comprasnet.gov.br/livre/Pregao/lista_pregao.asp?Opc=0&rdTpPregao=E&co_uasg=DATA_UASG&numprp=DATA_PREG'
+        ));
     }
 
     /**
