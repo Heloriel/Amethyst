@@ -39,7 +39,7 @@ class AmethystCoreController extends Controller
     #endregion
 
     #region VIEWS
-    public function index()
+    public function view_login()
     {
         return view('login');
     }

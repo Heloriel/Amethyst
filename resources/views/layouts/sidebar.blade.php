@@ -1,7 +1,7 @@
 <div class="d-none d-md-flex flex-column flex-shrink-0 p-0 bg-light sidebar" style="width: 250px;">
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-            <a href="/home" class="nav-link rounded-0 {{ request()->is('home') ? 'active' : '' }} d-flex link-dark">
+            <a href="/" class="nav-link rounded-0 {{ request()->is('/') ? 'active' : '' }} d-flex link-dark">
                 <i data-feather="home" class="me-2"></i>
                    HOME
             </a>

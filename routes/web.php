@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AmethystCoreController;
 
-Route::get('/', [AmethystCoreController::class, 'index']);
+Route::get('/', [AmethystCoreController::class, 'view_home']);
 
-Route::get('/home', [AmethystCoreController::class, 'view_home']);
+Route::get('/login', [AmethystCoreController::class, 'view_login']);
 
 Route::get('/create', [AmethystCoreController::class, 'view_create']);
 
