@@ -69,6 +69,13 @@
                                 PORTAIS
                         </a>
                     </li>
+                    <li
+                        class="nav-item rounded-pill small p-0 mb-1 {{ str_contains(url()->current(), 'users') ? 'submenu-active' : '' }}">
+                        <a href="/config/portal" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'users') ? 'link-dark' : 'link-secondary' }}">
+                            <i data-feather="chevron-right" class="me-2"></i>
+                                USUÁRIOS
+                        </a>
+                    </li>
                 </ul>
             </div>
         </li>

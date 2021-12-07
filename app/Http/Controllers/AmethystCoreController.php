@@ -121,7 +121,7 @@ class AmethystCoreController extends Controller
         $tags_count = count($tags_array);
         $to_replace = array('DATA_UASG', 'DATA_PREG');
         $replacer = array($fetch->uasg, $fetch->preg);
-        $this->direct_url = str_replace($to_replace, $replacer, $this->all_portals[$fetch->portal - 1]->direct_url);
+        $this->direct_url = str_replace($to_replace, $replacer, $this->all_portals->where('id', '==' ,$fetch->portal)->first()->direct_url);
 
         return view('edit', [
             'today_date' => $this->today_formatted,

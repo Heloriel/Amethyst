@@ -27,7 +27,7 @@
                             <label for="url-{{$portals->id}}">URL Base</label>
                             <input type="text" name="base_url" id="url-{{$portals->id}}" value="{{ $portals->base_url }}" aria-label="Url" placeholder="URL" class="form-control mb-2">
                             <label for="durl-{{$portals->id}}">URL Direta</label>
-                            <input type="text" name="direct_url" id="durl-{{$portals->id}}" value="{{ $portals->direct_url }}" aria-label="Url" placeholder="URL" class="form-control mb-2">
+                            <input type="text" name="direct_url" id="durl-{{$portals->id}}" value="{{ $portals->direct_url }}" aria-label="Url" placeholder="URL Direta" class="form-control mb-2">
                             <div class="d-block text-end">
                                 <a href="{{$portals->base_url}}" target="_blank" class="btn btn-outline-primary rounded-circle p-0 mx-1" type="button" style="padding: 5px !important;"><i data-feather="globe"></i></a>
                                 <a href="/config/portal/delete/{{$portals->id}}" class="btn btn-outline-danger rounded-circle p-0 mx-1" onclick="return confirm('Deseja realmente deletar o registro o portal {{$portals->name}} ?')" type="button" style="padding: 5px !important;"><i data-feather="x"></i></a>
