@@ -20,7 +20,7 @@
                             {{ $portals->name }}
                         </button>
                       </h2>
-                      <div id="portalCollapse-{{$portals->id}}" class="accordion-collapse collapse" aria-labelledby="heading-{{$portals->id}}" data-bs-parent="#accordionPortal">
+                      <div id="portalCollapse-{{$portals->id}}" class="accordion-collapse collapse @if(empty($portals->name)) show @endif" aria-labelledby="heading-{{$portals->id}}" data-bs-parent="#accordionPortal">
                         <div class="accordion-body">
                             <label for="name-{{$portals->id}}">Nome</label>
                             <input type="text" name="name" id="name-{{$portals->id}}" value="{{ $portals->name }}" aria-label="Nome" placeholder="NOME" class="form-control mb-2">
@@ -29,7 +29,9 @@
                             <label for="durl-{{$portals->id}}">URL Direta</label>
                             <input type="text" name="direct_url" id="durl-{{$portals->id}}" value="{{ $portals->direct_url }}" aria-label="Url" placeholder="URL Direta" class="form-control mb-2">
                             <div class="d-block text-end">
-                                <a href="{{$portals->base_url}}" target="_blank" class="btn btn-outline-primary rounded-circle p-0 mx-1" type="button" style="padding: 5px !important;"><i data-feather="globe"></i></a>
+                                @if(!empty($portals->base_url))
+                                    <a href="{{$portals->base_url}}" target="_blank" class="btn btn-outline-primary rounded-circle p-0 mx-1" type="button" style="padding: 5px !important;"><i data-feather="globe"></i></a>
+                                @endif
                                 <a href="/config/portal/delete/{{$portals->id}}" class="btn btn-outline-danger rounded-circle p-0 mx-1" onclick="return confirm('Deseja realmente deletar o registro o portal {{$portals->name}} ?')" type="button" style="padding: 5px !important;"><i data-feather="x"></i></a>
                             </div>
                         </div>
