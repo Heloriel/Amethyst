@@ -12,7 +12,8 @@ $("#isBudget").click( function () {
         $('#inputGroupSelect01').val(0);
         $('#inputGroupSelect02').val(0);
         $('#inputGroupSelect03').val(0);
-        $('#datePickerLabel').html('Data do Recebimento');
+        $('#publicationLabel').html('Data do Recebimento');
+        $('#datePickerLabel').html('Data do Envio');
         isBudget = true;
     }else{
         $('#timepicker').attr('disabled', false);
@@ -23,6 +24,8 @@ $("#isBudget").click( function () {
         $('#inputGroupSelect01').val(1);
         $('#inputGroupSelect02').val(1);
         $('#inputGroupSelect03').val(1);
+        $('#publicationLabel').html('Data da Publicação');
+        $('#datePickerLabel').html('Data da Disputa');
         isBudget = false;
     }
 });
