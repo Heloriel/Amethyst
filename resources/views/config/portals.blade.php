@@ -15,12 +15,12 @@
                 <div class="accordion" id="accordionPortal">
                 @foreach ($portal as $portals)
                     <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#portalCollapse-{{$portals->id}}" aria-expanded="true" aria-controls="collapseOne">
+                      <h2 class="accordion-header" id="heading-{{$portals->id}}">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#portalCollapse-{{$portals->id}}" aria-expanded="true" aria-controls="collapse-{{$portals->id}}">
                             {{ $portals->name }}
                         </button>
                       </h2>
-                      <div id="portalCollapse-{{$portals->id}}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionPortal">
+                      <div id="portalCollapse-{{$portals->id}}" class="accordion-collapse collapse" aria-labelledby="heading-{{$portals->id}}" data-bs-parent="#accordionPortal">
                         <div class="accordion-body">
                             <label for="name-{{$portals->id}}">Nome</label>
                             <input type="text" name="name" id="name-{{$portals->id}}" value="{{ $portals->name }}" aria-label="Nome" placeholder="NOME" class="form-control mb-2">
