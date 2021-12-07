@@ -44,11 +44,11 @@
       <td>{{ $fetch_result->preg }}</td>
       <td>{{ date('d/m/Y', strtotime($fetch_result->date)) }} - {{ date('H:i', strtotime($fetch_result->time)) }}</td>
       <td id="actions" class="d-flex align-items-center">
-        <a href="#" class="link-primary me-3"><i data-feather="eye"></i></a>
-        <a href="/edit/{{ $fetch_result->id }}" class="link-dark me-3"><i data-feather="edit"></i></a>
-        <a href="/delete/{{ $fetch_result->id }}" class="link-danger me-3" onClick="return confirm('Deseja realmente deletar o registro {{ $fetch_result->preg }} ?')"><i data-feather="trash"></i></a>
+        <a href="#" class="link-primary me-3" title="Ver"><i data-feather="eye"></i></a>
+        <a href="/edit/{{ $fetch_result->id }}" class="link-dark me-3" title="Editar"><i data-feather="edit"></i></a>
+        <a href="/delete/{{ $fetch_result->id }}" class="link-danger me-3" title="Excluir" onClick="return confirm('Deseja realmente deletar o registro {{ $fetch_result->preg }} ?')"><i data-feather="trash"></i></a>
         @if(!empty($direct_url[$fetch_result->id]))
-        <a href="{{ $direct_url[$fetch_result->id] }}" class="link-secondary me-3" target="_blank"><i data-feather="external-link"></i></a>
+        <a href="{{ $direct_url[$fetch_result->id] }}" class="link-secondary me-3" title="Abrir Externo" target="_blank"><i data-feather="external-link"></i></a>
         @endif
       </td>
     </tr>
