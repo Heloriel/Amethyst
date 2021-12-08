@@ -43,8 +43,8 @@
                         @endif
                     </th>
                   <td>{{ $user->name }}</td>
-                  <td>{{ $user->name }}</td>
-                  <td>{{ $user->name }}</td>
+                  <td>{{ $user->email }}</td>
+                  <td>{{ $user->rank }}</td>
                   <td id="actions" class="d-flex align-items-center">
                     <a href="#" class="link-primary me-3" title="Ver"><i data-feather="eye"></i></a>
                     <a href="/edit/" class="link-dark me-3" title="Editar"><i data-feather="edit"></i></a>

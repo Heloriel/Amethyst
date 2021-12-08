@@ -23,10 +23,8 @@
                         <img src="img/Logo-alt.svg" alt="Logo" id="logo">
                         <form action="/login/auth" method="post">
                             @csrf
-                            <input type="text" name="name" class="form-control bg-transparent text-white rounded-pill mb-5 ps-5 user-login-input" placeholder="USUÁRIO" aria-label="Usuário"
-                                aria-describedby="basic-addon1">
-                            <input type="password" name="password" class="form-control bg-transparent text-white rounded-pill mb-5 ps-5 user-pass-input" placeholder="SENHA" aria-label="Senha"
-                                aria-describedby="basic-addon1">
+                            <input type="text" name="name" class="form-control bg-transparent text-white rounded-pill mb-5 ps-5 user-login-input" placeholder="USUÁRIO" aria-label="Usuário" aria-describedby="basic-addon1" autocomplete="off">
+                            <input type="password" name="password" class="form-control bg-transparent text-white rounded-pill mb-5 ps-5 user-pass-input" placeholder="SENHA" aria-label="Senha" aria-describedby="basic-addon1" autocomplete="off">
                             <div class="d-grid gap-2">
                                 <input type="submit" value="ENTRAR" class="btn btn-outline-light btn-block rounded-pill">
                             </div>
