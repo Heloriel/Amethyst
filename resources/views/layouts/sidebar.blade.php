@@ -7,16 +7,10 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="#"
-                class="nav-link rounded-0 {{ str_contains(url()->current(), 'list') ? 'active' : '' }}
-                {{ str_contains(url()->current(), 'create') ? 'active' : '' }} link-dark d-flex"
-                data-bs-toggle="collapse" data-bs-target="#biddings-collapse" aria-expanded="true">
-                <i data-feather="book" class="me-2"></i>
-                    REGISTROS
+            <a href="#" class="nav-link rounded-0 {{ preg_match('(budget|biddings|create)', url()->current()) ? 'active' : '' }} link-dark d-flex" data-bs-toggle="collapse" data-bs-target="#biddings-collapse" aria-expanded="true">
+                <i data-feather="book" class="me-2"></i> REGISTROS
             </a>
-            <div class="collapse {{ str_contains(url()->current(), 'list') ? 'show' : '' }}
-                {{ str_contains(url()->current(), 'create') ? 'show' : '' }} submenu"
-                id="biddings-collapse" style="">
+            <div class="collapse {{ preg_match('(budget|biddings|create)', url()->current()) ? 'show' : '' }} submenu" id="biddings-collapse" style="">
                 <ul class="btn-toggle-nav px-3 mt-1 list-unstyled small">
                     <li class="nav-item rounded-pill small p-0 mb-1 {{ str_contains(url()->current(), 'biddings') ? 'submenu-active' : '' }}">
                         <a href="/list/biddings" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'biddings') ? 'link-dark' : 'link-secondary' }}">
@@ -67,8 +61,8 @@
                         </a>
                     </li>
                     <li
-                        class="nav-item rounded-pill small p-0 mb-1 {{ str_contains(url()->current(), 'users') ? 'submenu-active' : '' }}">
-                        <a href="/config/portal" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'users') ? 'link-dark' : 'link-secondary' }}">
+                        class="nav-item rounded-pill small p-0 mb-1 {{ str_contains(url()->current(), 'user') ? 'submenu-active' : '' }}">
+                        <a href="/config/user/list" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'user') ? 'link-dark' : 'link-secondary' }}">
                             <i data-feather="chevron-right" class="me-2"></i>
                                 USUÁRIOS
                         </a>
@@ -88,7 +82,7 @@
             </a>
             <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
                 <li>
-                    <h6 class="dropdown-header">Menu - {{ session()->get('rank_name') }}</h6>
+                    <h6 class="dropdown-header">Menu ({{ session()->get('rank_name') }})</h6>
                 </li>
                 <li><a class="dropdown-item" href="/logout">Conta</a></li>
                 <hr>

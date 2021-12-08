@@ -5,24 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Status;
 use App\Models\Portal;
+use App\Models\User;
 
 class AmethystAdminCore extends Controller
 {
     private $all_status;
     private $all_portals;
+    private $all_users;
 
     function __construct(){
         $this->all_status = Status::all();
         $this->all_portals = Portal::all();
+        $this->all_users = User::all();
     }
 
     //#region VIEWS
     function general_config(){
         return view('config.index');
-    }
-
-    function general_config_redirect(){
-        return redirect('/config/general');
     }
 
     function status_config(){
@@ -48,7 +47,18 @@ class AmethystAdminCore extends Controller
             'portal_json' => $portals_json
         ]);
     }
-    //#region
+
+    function user_list_view(){
+
+        if($this->all_users->isEmpty()){
+            $this->all_users = null;
+       }
+
+        return view('config.user_list',[
+            'users' => $this->all_users,
+        ]);
+    }
+    //#endregion
 
     //#region STATUS CRUD
     public function save_status(Request $request)

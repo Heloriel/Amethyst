@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="/css/configPortals.css">
 @endsection
 
-@section('title', 'Situações')
+@section('title', 'Portais')
 
 @section('content')
 <form action="/config/portal/save" method="post">
@@ -37,12 +37,6 @@
                         </div>
                       </div>
                     </div>
-                {{-- <div class="input-group mb-2 d-flex align-items-center" id="portalContainer">
-                        <input type="text" name="name" id="name-{{$portals->id}}" value="{{ $portals->name }}" aria-label="Nome" placeholder="NOME" class="form-control">
-                        <input type="text" name="base_url" id="url-{{$portals->id}}" value="{{ $portals->base_url }}" aria-label="Url" placeholder="URL" class="form-control">
-                        <input type="text" name="direct_url" id="url-{{$portals->id}}" value="{{ $portals->direct_url }}" aria-label="Url" placeholder="URL" class="form-control">
-                        <a href="/config/portal/delete/{{$portals->id}}" class="btn btn-danger p-0" type="button" style="padding: 5px !important;"><i data-feather="x"></i></a>
-                    </div> --}}
                 @endforeach
                 </div>
             </div>

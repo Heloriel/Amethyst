@@ -41,7 +41,7 @@ Route::get('/delete/{id}', [AmethystCoreController::class, 'preg_delete'])->midd
 
 Route::prefix('config')->middleware('auth')->group(function () {
     Route::get('/general', [AmethystAdminCore::class, 'general_config']);
-    Route::get('/', [AmethystAdminCore::class, 'general_config_redirect']);
+    Route::get('/', function(){ return redirect('config/general'); });
     Route::get('/status', [AmethystAdminCore::class, 'status_config']);
     Route::post('/status/save', [AmethystAdminCore::class, 'save_status']);
     Route::get('/status/create', [AmethystAdminCore::class, 'create_status']);
@@ -50,6 +50,7 @@ Route::prefix('config')->middleware('auth')->group(function () {
     Route::post('/portal/save', [AmethystAdminCore::class, 'save_portal']);
     Route::get('/portal/create', [AmethystAdminCore::class, 'create_portal']);
     Route::get('/portal/delete/{id}', [AmethystAdminCore::class, 'delete_portal']);
+    Route::get('/user/list', [AmethystAdminCore::class, 'user_list_view']);
 });
 
 /* ==================================[ USER CORE CONTROLLER ]==================================== */
