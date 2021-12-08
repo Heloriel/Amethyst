@@ -19,17 +19,16 @@
                 id="biddings-collapse" style="">
                 <ul class="btn-toggle-nav px-3 mt-1 list-unstyled small">
                     <li class="nav-item rounded-pill small p-0 mb-1 {{ str_contains(url()->current(), 'biddings') ? 'submenu-active' : '' }}">
-                        <a href="/biddings/list" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'biddings') ? 'link-dark' : 'link-secondary' }}">
+                        <a href="/list/biddings" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'biddings') ? 'link-dark' : 'link-secondary' }}">
                             <i data-feather="list" class="mx-2"></i> LICITAÇÕES
                         </a>
                     </li>
                     <li class="nav-item rounded-pill small p-0 mb-1 {{ str_contains(url()->current(), 'budgets') ? 'submenu-active' : '' }}">
-                        <a href="/budgets/list" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'budgets') ? 'link-dark' : 'link-secondary' }}">
+                        <a href="/list/budgets" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'budgets') ? 'link-dark' : 'link-secondary' }}">
                             <i data-feather="dollar-sign" class="mx-2"></i> ORÇAMENTOS
                         </a>
                     </li>
-                    <li
-                        class="nav-item rounded-pill small p-0 mb-1 {{ str_contains(url()->current(), 'create') ? 'submenu-active' : '' }}">
+                    <li class="nav-item rounded-pill small p-0 mb-1 {{ str_contains(url()->current(), 'create') ? 'submenu-active' : '' }}">
                         <a href="/create" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'create') ? 'link-dark' : 'link-secondary' }}">
                             <i data-feather="plus-circle" class="mx-2"></i> CADASTRAR
                         </a>
@@ -39,9 +38,7 @@
         </li>
 
         <li class="nav-item">
-            <a href="#"
-                class="nav-link rounded-0 {{ str_contains(url()->current(), 'config') ? 'active' : '' }} link-dark d-flex"
-                data-bs-toggle="collapse" data-bs-target="#config-collapse" aria-expanded="true">
+            <a href="#" class="nav-link rounded-0 {{ str_contains(url()->current(), 'config') ? 'active' : '' }} link-dark d-flex" data-bs-toggle="collapse" data-bs-target="#config-collapse" aria-expanded="true">
                 <i data-feather="settings" class="me-2"></i>
                 CONFIGURAÇÕES
             </a>

@@ -1,8 +1,4 @@
 <?php
-
-use App\Http\Controllers\AmethystAdminCore;
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,49 +11,52 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\AmethystCoreController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\AmethystAdminCore;
+use App\Http\Controllers\AmethystUserCore;
+
+use Illuminate\Support\Facades\Route;
+
+/* ==================================[ CORE CONTROLLER ]==================================== */
 
 Route::get('/', [AmethystCoreController::class, 'view_home'])->middleware('auth');
 
-Route::get('/login', [AmethystCoreController::class, 'view_login'])->name('login');
+Route::prefix('list')->middleware('auth')->group(function () {
+    Route::get('/biddings', [AmethystCoreController::class, 'view_biddings_list']);
+    Route::get('/budgets', [AmethystCoreController::class, 'view_budgets_list']);
+});
 
-Route::post('/login/auth', [AmethystCoreController::class, 'auth_user']);
+Route::prefix('edit')->middleware('auth')->group(function () {
+    Route::get('/{id}', [AmethystCoreController::class, 'view_edit'])->middleware('auth');
+    Route::post('/save/{id}', [AmethystCoreController::class, 'preg_update'])->middleware('auth');
+});
 
-Route::get('/logout', [AmethystCoreController::class, 'logout']);
-
-Route::get('/create', [AmethystCoreController::class, 'view_create'])->middleware('auth');
-
-Route::get('/biddings/list', [AmethystCoreController::class, 'view_biddings_list'])->middleware('auth');
-
-Route::get('/budgets/list', [AmethystCoreController::class, 'view_budgets_list'])->middleware('auth');
-
-Route::get('/edit/{id}', [AmethystCoreController::class, 'view_edit'])->middleware('auth');
+Route::prefix('create')->middleware('auth')->group(function () {
+    Route::get('/', [AmethystCoreController::class, 'view_create'])->middleware('auth');
+    Route::post('/save', [AmethystCoreController::class, 'preg_create'])->middleware('auth');
+});
 
 Route::get('/delete/{id}', [AmethystCoreController::class, 'preg_delete'])->middleware('auth');
 
-Route::post('/create/save', [AmethystCoreController::class, 'preg_create'])->middleware('auth');
+/* ==================================[ ADMIN CORE CONTROLLER ]==================================== */
 
-Route::post('/edit/save/{id}', [AmethystCoreController::class, 'preg_update'])->middleware('auth');
+Route::prefix('config')->middleware('auth')->group(function () {
+    Route::get('/general', [AmethystAdminCore::class, 'general_config']);
+    Route::get('/', [AmethystAdminCore::class, 'general_config_redirect']);
+    Route::get('/status', [AmethystAdminCore::class, 'status_config']);
+    Route::post('/status/save', [AmethystAdminCore::class, 'save_status']);
+    Route::get('/status/create', [AmethystAdminCore::class, 'create_status']);
+    Route::get('/status/delete/{id}', [AmethystAdminCore::class, 'delete_status']);
+    Route::get('/portal', [AmethystAdminCore::class, 'portal_config']);
+    Route::post('/portal/save', [AmethystAdminCore::class, 'save_portal']);
+    Route::get('/portal/create', [AmethystAdminCore::class, 'create_portal']);
+    Route::get('/portal/delete/{id}', [AmethystAdminCore::class, 'delete_portal']);
+});
 
+/* ==================================[ USER CORE CONTROLLER ]==================================== */
 
-/* ====================================================================== */
+Route::prefix('login')->group(function () {
+    Route::get('/', [AmethystUserCore::class, 'view_login'])->name('login');
+    Route::post('/auth', [AmethystUserCore::class, 'auth_user']);
+});
 
-Route::get('config/general', [AmethystAdminCore::class, 'general_config'])->middleware('auth');
-
-Route::get('config/', [AmethystAdminCore::class, 'general_config_redirect'])->middleware('auth');
-
-Route::get('config/status', [AmethystAdminCore::class, 'status_config'])->middleware('auth');
-
-Route::post('config/status/save', [AmethystAdminCore::class, 'save_status'])->middleware('auth');
-
-Route::get('config/status/create', [AmethystAdminCore::class, 'create_status'])->middleware('auth');
-
-Route::get('config/status/delete/{id}', [AmethystAdminCore::class, 'delete_status'])->middleware('auth');
-
-Route::get('config/portal', [AmethystAdminCore::class, 'portal_config'])->middleware('auth');
-
-Route::post('config/portal/save', [AmethystAdminCore::class, 'save_portal'])->middleware('auth');
-
-Route::get('config/portal/create', [AmethystAdminCore::class, 'create_portal'])->middleware('auth');
-
-Route::get('config/portal/delete/{id}', [AmethystAdminCore::class, 'delete_portal'])->middleware('auth');
+Route::get('/logout', [AmethystUserCore::class, 'logout']);
