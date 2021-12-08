@@ -36,7 +36,7 @@
                 </ul>
             </div>
         </li>
-
+        @if( auth()->user()->rank >= 2)
         <li class="nav-item">
             <a href="#" class="nav-link rounded-0 {{ str_contains(url()->current(), 'config') ? 'active' : '' }} link-dark d-flex" data-bs-toggle="collapse" data-bs-target="#config-collapse" aria-expanded="true">
                 <i data-feather="settings" class="me-2"></i>
@@ -76,6 +76,7 @@
                 </ul>
             </div>
         </li>
+        @endif
     </ul>
     <hr>
     <div class="nav-item pb-3 ps-3">
@@ -83,11 +84,11 @@
             <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
                 id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="/img/Logo-short.svg" alt="" width="32" height="32" class="rounded-circle me-2 user-avatar">
-                <strong>{{ Auth::user()->name }}</strong>
+                <strong>{{ auth()->user()->name }}</strong>
             </a>
             <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
                 <li>
-                    <h6 class="dropdown-header">Menu</h6>
+                    <h6 class="dropdown-header">Menu - {{ session()->get('rank_name') }}</h6>
                 </li>
                 <li><a class="dropdown-item" href="/logout">Conta</a></li>
                 <hr>

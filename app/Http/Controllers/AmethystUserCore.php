@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
+use App\Models\Rank;
 
 class AmethystUserCore extends Controller
 {
+    private $user_rank;
+
     public function view_login()
     {
         return view('login');
@@ -22,7 +25,8 @@ class AmethystUserCore extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
+            $this->user_rank = Rank::where('id', auth()->user()->rank)->first();
+            $request->session()->put('rank_name', $this->user_rank['name']);
             return redirect()->intended('');
         }
 

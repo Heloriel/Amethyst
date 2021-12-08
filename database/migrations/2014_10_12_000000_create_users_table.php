@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->integer('rank');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -28,7 +29,20 @@ class CreateUsersTable extends Migration
         DB::table('users')->insert(array(
             'name' => 'admin',
             'email' => 'admin@admin.com',
-            'password' => bcrypt('admin')
+            'password' => bcrypt('admin'),
+            'rank' => 3
+        ));
+        DB::table('users')->insert(array(
+            'name' => 'operator',
+            'email' => 'operator@admin.com',
+            'password' => bcrypt('operator'),
+            'rank' => 2
+        ));
+        DB::table('users')->insert(array(
+            'name' => 'reader',
+            'email' => 'reader@admin.com',
+            'password' => bcrypt('reader'),
+            'rank' => 1
         ));
     }
 

@@ -75,7 +75,6 @@ class AmethystCoreController extends Controller
             $this->direct_url[$fa->id] = str_replace($to_replace, $replacer, $portal_array[$fa->portal][2]);
         }
 
-
         return view('biddings_list', [
             'today_date' => $this->today_formatted,
             'time_now' => $this->now,
