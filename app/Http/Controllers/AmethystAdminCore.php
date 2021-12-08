@@ -6,17 +6,20 @@ use Illuminate\Http\Request;
 use App\Models\Status;
 use App\Models\Portal;
 use App\Models\User;
+use App\Models\Rank;
 
 class AmethystAdminCore extends Controller
 {
     private $all_status;
     private $all_portals;
     private $all_users;
+    private $all_ranks;
 
     function __construct(){
         $this->all_status = Status::all();
         $this->all_portals = Portal::all();
         $this->all_users = User::all();
+        $this->all_ranks = Rank::all();
     }
 
     //#region VIEWS
@@ -52,10 +55,19 @@ class AmethystAdminCore extends Controller
 
         if($this->all_users->isEmpty()){
             $this->all_users = null;
-       }
+        }
+
+        if($this->all_ranks->isEmpty()){
+            $this->all_ranks = null;
+        }else{
+            foreach($this->all_ranks as $ranks){
+                $rank_array[$ranks->id] = $ranks->name;
+            }
+        }
 
         return view('config.user_list',[
             'users' => $this->all_users,
+            'ranks' => $rank_array
         ]);
     }
     //#endregion
