@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('rank');
+            $table->text('avatar_url');
+            $table->boolean('primary');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -30,19 +32,25 @@ class CreateUsersTable extends Migration
             'name' => 'admin',
             'email' => 'admin@admin.com',
             'password' => bcrypt('admin'),
-            'rank' => 3
+            'rank' => 3,
+            'avatar_url' => '/img/avatar/Logo-short.svg',
+            'primary' => true
         ));
         DB::table('users')->insert(array(
             'name' => 'operator',
             'email' => 'operator@admin.com',
             'password' => bcrypt('operator'),
-            'rank' => 2
+            'rank' => 2,
+            'avatar_url' => '/img/avatar/Logo-short.svg',
+            'primary' => false
         ));
         DB::table('users')->insert(array(
             'name' => 'reader',
             'email' => 'reader@admin.com',
             'password' => bcrypt('reader'),
-            'rank' => 1
+            'rank' => 1,
+            'avatar_url' => '/img/avatar/Logo-short.svg',
+            'primary' => false
         ));
     }
 

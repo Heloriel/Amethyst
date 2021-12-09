@@ -3,7 +3,7 @@
         <li class="nav-item">
             <a href="/" class="nav-link rounded-0 {{ request()->is('/') ? 'active' : '' }} d-flex link-dark">
                 <i data-feather="home" class="me-2"></i>
-                   HOME
+                HOME
             </a>
         </li>
         <li class="nav-item">
@@ -30,54 +30,48 @@
                 </ul>
             </div>
         </li>
-        @if( auth()->user()->rank >= 2)
-        <li class="nav-item">
-            <a href="#" class="nav-link rounded-0 {{ str_contains(url()->current(), 'config') ? 'active' : '' }} link-dark d-flex" data-bs-toggle="collapse" data-bs-target="#config-collapse" aria-expanded="true">
-                <i data-feather="settings" class="me-2"></i>
-                CONFIGURAÇÕES
-            </a>
-            <div class="collapse {{ str_contains(url()->current(), 'config') ? 'show' : '' }} submenu"
-                id="config-collapse" style="">
-                <ul class="btn-toggle-nav px-3 mt-1 list-unstyled small">
-                    <li
-                        class="nav-item rounded-pill small p-0 mb-1 {{ str_contains(url()->current(), 'general') ? 'submenu-active' : '' }}">
-                        <a href="/config/general" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'general') ? 'link-dark' : 'link-secondary' }}">
-                            <i data-feather="chevron-right" class="me-2"></i>
+        @if (auth()->user()->rank >= 2)
+            <li class="nav-item">
+                <a href="#" class="nav-link rounded-0 {{ str_contains(url()->current(), 'config') ? 'active' : '' }} link-dark d-flex" data-bs-toggle="collapse" data-bs-target="#config-collapse" aria-expanded="true">
+                    <i data-feather="settings" class="me-2"></i>
+                    CONFIGURAÇÕES
+                </a>
+                <div class="collapse {{ str_contains(url()->current(), 'config') ? 'show' : '' }} submenu" id="config-collapse" style="">
+                    <ul class="btn-toggle-nav px-3 mt-1 list-unstyled small">
+                        <li class="nav-item rounded-pill small p-0 mb-1 {{ str_contains(url()->current(), 'general') ? 'submenu-active' : '' }}">
+                            <a href="/config/general" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'general') ? 'link-dark' : 'link-secondary' }}">
+                                <i data-feather="chevron-right" class="me-2"></i>
                                 GERAL
-                        </a>
-                    </li>
-                    <li
-                        class="nav-item rounded-pill small p-0 mb-1 {{ str_contains(url()->current(), 'status') ? 'submenu-active' : '' }}">
-                        <a href="/config/status" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'status') ? 'link-dark' : 'link-secondary' }}">
-                            <i data-feather="chevron-right" class="me-2"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item rounded-pill small p-0 mb-1 {{ str_contains(url()->current(), 'status') ? 'submenu-active' : '' }}">
+                            <a href="/config/status" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'status') ? 'link-dark' : 'link-secondary' }}">
+                                <i data-feather="chevron-right" class="me-2"></i>
                                 SITUAÇÕES
-                        </a>
-                    </li>
-                    <li
-                        class="nav-item rounded-pill small p-0 mb-1 {{ str_contains(url()->current(), 'portal') ? 'submenu-active' : '' }}">
-                        <a href="/config/portal" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'portal') ? 'link-dark' : 'link-secondary' }}">
-                            <i data-feather="chevron-right" class="me-2"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item rounded-pill small p-0 mb-1 {{ str_contains(url()->current(), 'portal') ? 'submenu-active' : '' }}">
+                            <a href="/config/portal" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'portal') ? 'link-dark' : 'link-secondary' }}">
+                                <i data-feather="chevron-right" class="me-2"></i>
                                 PORTAIS
-                        </a>
-                    </li>
-                    <li
-                        class="nav-item rounded-pill small p-0 mb-1 {{ str_contains(url()->current(), 'user') ? 'submenu-active' : '' }}">
-                        <a href="/config/user/list" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'user') ? 'link-dark' : 'link-secondary' }}">
-                            <i data-feather="chevron-right" class="me-2"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item rounded-pill small p-0 mb-1 {{ str_contains(url()->current(), 'user') ? 'submenu-active' : '' }}">
+                            <a href="/config/user/list" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'user') ? 'link-dark' : 'link-secondary' }}">
+                                <i data-feather="chevron-right" class="me-2"></i>
                                 USUÁRIOS
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </li>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
         @endif
     </ul>
     <hr>
     <div class="nav-item pb-3 ps-3">
         <div class="dropdown">
-            <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
-                id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="/img/Logo-short.svg" alt="" width="32" height="32" class="rounded-circle me-2 user-avatar">
+            <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="{{ auth()->user()->avatar_url }}" alt="" width="32" height="32" class="rounded-circle me-2 user-avatar">
                 <strong>{{ auth()->user()->name }}</strong>
             </a>
             <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
