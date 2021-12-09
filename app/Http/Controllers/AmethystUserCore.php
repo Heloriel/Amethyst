@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Rank;
 
+use App\Models\User;
+
 class AmethystUserCore extends Controller
 {
     private $user_rank;
@@ -43,5 +45,12 @@ class AmethystUserCore extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/login');
+    }
+
+    public function delete_user($id)
+    {
+        $user = User::where('id', $id)->first();
+        $user->delete();
+        return redirect('/config/user/list')->with('alert', 'Usuário ' . $user->name . ' deletado com sucesso!')->with('type', 'danger')->with('aicon', 'trash');
     }
 }

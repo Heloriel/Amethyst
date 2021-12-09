@@ -15,6 +15,7 @@ use App\Http\Controllers\AmethystAdminCore;
 use App\Http\Controllers\AmethystUserCore;
 
 use Illuminate\Support\Facades\Route;
+use PHPUnit\TextUI\XmlConfiguration\Group;
 
 /* ==================================[ CORE CONTROLLER ]==================================== */
 
@@ -61,3 +62,7 @@ Route::prefix('login')->group(function () {
 });
 
 Route::get('/logout', [AmethystUserCore::class, 'logout']);
+
+Route::prefix('user')->middleware('auth')->group(function () {
+    Route::get('/delete/{id}', [AmethystUserCore::class, 'delete_user']);
+});

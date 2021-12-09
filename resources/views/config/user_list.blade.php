@@ -41,7 +41,7 @@
                                     <td>
                                         <a href="#" class="link-primary me-3" title="Ver"><i data-feather="eye"></i></a>
                                         <a href="/edit/" class="link-dark me-3" title="Editar"><i data-feather="edit"></i></a>
-                                        @if( !$user->primary )<a href="/delete/" class="link-danger me-3" title="Excluir" onClick="return confirm('Deseja realmente deletar o registro?')"><i data-feather="trash"></i></a> @endif
+                                        @if( !$user->primary )<a href="/user/delete/{{ $user->id }}" class="link-danger me-3" title="Excluir" onClick="return confirm('Deseja realmente deletar o registro?')"><i data-feather="trash"></i></a> @endif
                                     </td>
                                 </tr>
                             @endforeach

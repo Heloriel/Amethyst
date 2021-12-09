@@ -18,4 +18,13 @@ class Authenticate extends Middleware
             return route('login');
         }
     }
+
+    protected function isAdmin()
+    {
+        if(auth()->user()->rank == 3){
+            return true;
+        }else{
+            return redirect()->intended('');
+        }
+    }
 }
