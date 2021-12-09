@@ -35,7 +35,7 @@
                                     <th scope="row">
                                         <img src="{{ $user->avatar_url }}" alt="" width="32" height="32" class="rounded-circle me-2 user-avatar">
                                     </th>
-                                    <td>{{ $user->name }} @if ($user->primary)<span class="badge bg-secondary rounded-pill small">P</span>@endif</td>
+                                    <td>{{ $user->name }} @if ($user->primary)<span class="badge bg-secondary rounded-pill small" title="Principal">P</span>@endif</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $ranks[$user->rank] }}</td>
                                     <td>
