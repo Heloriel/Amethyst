@@ -11,6 +11,11 @@
         @csrf
         <div class="container-fluid">
             <div class="row">
+                <div class="col-12 mb-3 d-flex justify-content-end">
+                    <a href="/config/user/create" class="btn btn-outline-success rounded-pill py-0 px-2 d-flex" id="add-status-btn"><i data-feather="plus"></i> Novo Usuário</a>
+                </div>
+            </div>
+            <div class="row">
                 @if (is_null($users))
                     <center>
                         <h4>Nenhuma situação cadastrada, clique no "+" para adicionar uma nova situação!</h4>
@@ -35,7 +40,7 @@
                                     <th scope="row">
                                         <img src="{{ $user->avatar_url }}" alt="" width="32" height="32" class="rounded-circle me-2 user-avatar">
                                     </th>
-                                    <td>{{ $user->name }} @if ($user->primary)<span class="badge bg-secondary rounded-pill small" title="Principal">P</span>@endif</td>
+                                    <td>{{ $user->name }} @if ($user->primary)<span class="badge bg-secondary rounded-pill small px-2" title="Principal">P</span>@endif</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $ranks[$user->rank] }}</td>
                                     <td>
@@ -49,10 +54,6 @@
                     </table>
                 </div>
                 @endif
-
-                <div class="col-12 mb-3 d-flex justify-content-center">
-                    <a href="/config/status/create" class="btn btn-outline-dark rounded-circle p-1" id="add-status-btn"><i data-feather="plus"></i></a>
-                </div>
             </div>
         </div>
     </form>

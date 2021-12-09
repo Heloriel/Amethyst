@@ -41,7 +41,7 @@ class CreateUsersTable extends Migration
             'email' => 'operator@admin.com',
             'password' => bcrypt('operator'),
             'rank' => 2,
-            'avatar_url' => '/img/avatar/Logo-short.svg',
+            'avatar_url' => '/img/avatar/Logo.svg',
             'primary' => false
         ));
         DB::table('users')->insert(array(
@@ -49,7 +49,7 @@ class CreateUsersTable extends Migration
             'email' => 'reader@admin.com',
             'password' => bcrypt('reader'),
             'rank' => 1,
-            'avatar_url' => '/img/avatar/Logo-short.svg',
+            'avatar_url' => '/img/avatar/Logo.svg',
             'primary' => false
         ));
     }
