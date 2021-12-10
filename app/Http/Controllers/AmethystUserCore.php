@@ -21,7 +21,7 @@ class AmethystUserCore extends Controller
     public function auth_user(Request $request)
     {
         $credentials = $request->validate([
-            'name' => ['required'],
+            'username' => ['required'],
             'password' => ['required']
         ]);
 
@@ -33,7 +33,7 @@ class AmethystUserCore extends Controller
         }
 
         return back()->withErrors([
-            'name' => 'Usuário não encontrado.'
+            'username' => 'Usuário ou senha incorretos.'
         ]);
     }
 
@@ -45,6 +45,25 @@ class AmethystUserCore extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/login');
+    }
+
+    public function save_user(Request $request, $id)
+    {
+        $user = User::where('id', $id)->findOrFail();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->rank = $request->rank;
+        $user->avatar_url = $request->avatar;
+        $user->save();
+    }
+
+    public function edit_user($id)
+    {
+        $user = User::where('id', $id);
+        return view('config.user_edit',[
+            'user' => $user,
+        ]);
     }
 
     public function delete_user($id)

@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('username');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -29,15 +30,26 @@ class CreateUsersTable extends Migration
         });
 
         DB::table('users')->insert(array(
-            'name' => 'admin',
-            'email' => 'admin@admin.com',
-            'password' => bcrypt('admin'),
+            'name' => 'Root User',
+            'username' => 'root',
+            'email' => 'root@admin.com',
+            'password' => bcrypt('root'),
             'rank' => 3,
             'avatar_url' => '/img/avatar/Logo-short.svg',
             'primary' => true
         ));
         DB::table('users')->insert(array(
-            'name' => 'operator',
+            'name' => 'John Doe',
+            'username' => 'admin',
+            'email' => 'admin@admin.com',
+            'password' => bcrypt('admin'),
+            'rank' => 3,
+            'avatar_url' => '/img/avatar/Logo-short.svg',
+            'primary' => false
+        ));
+        DB::table('users')->insert(array(
+            'name' => 'Jane Doe',
+            'username' => 'operator',
             'email' => 'operator@admin.com',
             'password' => bcrypt('operator'),
             'rank' => 2,
@@ -45,7 +57,8 @@ class CreateUsersTable extends Migration
             'primary' => false
         ));
         DB::table('users')->insert(array(
-            'name' => 'reader',
+            'name' => 'Orácio Fritzo',
+            'username' => 'reader',
             'email' => 'reader@admin.com',
             'password' => bcrypt('reader'),
             'rank' => 1,
