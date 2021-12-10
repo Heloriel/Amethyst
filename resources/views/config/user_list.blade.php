@@ -2,6 +2,7 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/list.css">
+    <link rel="stylesheet" href="/css/user.css">
 @endsection
 
 @section('title', 'Usuários')
@@ -39,9 +40,9 @@
                             @foreach ($users as $user)
                                 <tr @if($user->id == auth()->user()->id) class="table-secondary" @endif>
                                     <th scope="row">
-                                        <img src="{{ $user->avatar_url }}" alt="" width="32" height="32" class="rounded-circle me-2 user-avatar">
+                                        <div class="avatar-mini rounded-circle bg-light" style="background: url({{$user->avatar_url}});"></div>
                                     </th>
-                                    <td>{{ $user->name }} @if ($user->primary)<span class="badge bg-secondary rounded-pill small px-2" title="Principal">P</span>@endif</td>
+                                    <td>{{ $user->first_name }} @if ($user->primary)<span class="badge bg-secondary rounded-pill small px-2" title="Principal">P</span>@else {{ $user->last_name }}  @endif</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->username }}</td>
                                     <td>{{ $ranks[$user->rank] }}</td>

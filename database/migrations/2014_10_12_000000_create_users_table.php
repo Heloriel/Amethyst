@@ -17,7 +17,8 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('username');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -30,7 +31,8 @@ class CreateUsersTable extends Migration
         });
 
         DB::table('users')->insert(array(
-            'name' => 'Root User',
+            'first_name' => 'Root',
+            'last_name' => 'Primary',
             'username' => 'root',
             'email' => 'root@admin.com',
             'password' => bcrypt('root'),
@@ -39,30 +41,33 @@ class CreateUsersTable extends Migration
             'primary' => true
         ));
         DB::table('users')->insert(array(
-            'name' => 'John Doe',
+            'first_name' => 'John',
+            'last_name' => 'Doe',
             'username' => 'admin',
             'email' => 'admin@admin.com',
             'password' => bcrypt('admin'),
             'rank' => 3,
-            'avatar_url' => '/img/avatar/Logo-short.svg',
+            'avatar_url' => '/img/avatar/johndoe.jpg',
             'primary' => false
         ));
         DB::table('users')->insert(array(
-            'name' => 'Jane Doe',
+            'first_name' => 'Jane',
+            'last_name' => 'Doe',
             'username' => 'operator',
             'email' => 'operator@admin.com',
             'password' => bcrypt('operator'),
             'rank' => 2,
-            'avatar_url' => '/img/avatar/Logo.svg',
+            'avatar_url' => '/img/avatar/janedoe.jpg',
             'primary' => false
         ));
         DB::table('users')->insert(array(
-            'name' => 'Orácio Fritzo',
+            'first_name' => 'Orácio',
+            'last_name' => 'Fritzo',
             'username' => 'reader',
             'email' => 'reader@admin.com',
             'password' => bcrypt('reader'),
             'rank' => 1,
-            'avatar_url' => '/img/avatar/Logo.svg',
+            'avatar_url' => '/img/avatar/oraciofritzo.jpg',
             'primary' => false
         ));
     }

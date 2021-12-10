@@ -60,9 +60,9 @@ class AmethystUserCore extends Controller
 
     public function edit_user($id)
     {
-        $user = User::where('id', $id);
-        return view('config.user_edit',[
-            'user' => $user,
+        $user = User::where('id', $id)->first();
+        return view('config.user_edit', [
+            'user' => $user
         ]);
     }
 

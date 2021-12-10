@@ -16,22 +16,19 @@
             <div class="row">
                 <div class="col-sm-12 col-md-2 mb-3">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInputUASG" name="uasg" autocomplete="off"
-                            placeholder="UASG" aria-label="UASG" aria-describedby="basic-addon1" maxlength="15">
+                        <input type="text" class="form-control" id="floatingInputUASG" name="uasg" autocomplete="off" placeholder="UASG" aria-label="UASG" aria-describedby="basic-addon1" maxlength="15">
                         <label for="floatingInputUASG" style="color: #92999F;">UASG</label>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-3 mb-3">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInputPreg" name="preg" autocomplete="off"
-                            placeholder="PREGÃO / ORÇAMENTO" aria-label="Número do Pregão" maxlength="30">
+                        <input type="text" class="form-control" id="floatingInputPreg" name="preg" autocomplete="off" placeholder="PREGÃO / ORÇAMENTO" aria-label="Número do Pregão" maxlength="30">
                         <label for="floatingInputPreg" style="color: #92999F;">PREGÃO / ORÇAMENTO</label>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-7 mb-3">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInputNome" name="name" autocomplete="off"
-                            placeholder="NOME DO ORGÃO" aria-label="Nome do Orgão">
+                        <input type="text" class="form-control" id="floatingInputNome" name="name" autocomplete="off" placeholder="NOME DO ORGÃO" aria-label="Nome do Orgão">
                         <label for="floatingInputNome" style="color: #92999F;">NOME DO ORGÃO</label>
                     </div>
                 </div>
@@ -68,34 +65,30 @@
 
                 <div class="col-sm-12 col-md-4 mb-4">
                     <div class="form-floating">
-                        <input type="date" name="publication" placeholder="{{ $today_date }}"
-                            autocomplete="off" class="form-control" maxlength="10">
+                        <input type="date" name="publication" placeholder="{{ $today_date }}" autocomplete="off" class="form-control" maxlength="10">
                         <label for="pubPicker" style="color: #92999F;" id="publicationLabel">Data Publicação</label>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-4 mb-4">
                     <div class="form-floating">
-                        <input type="date" name="date" placeholder="{{ $today_date }}" autocomplete="off"
-                            class="form-control" maxlength="10">
+                        <input type="date" name="date" placeholder="{{ $today_date }}" autocomplete="off" class="form-control" maxlength="10">
                         <label for="datepicker" style="color: #92999F;" id="datePickerLabel">Data Disputa</label>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-4 mb-4">
                     <div class="form-floating">
-                        <input type="time" name="time" id="timepicker" placeholder="{{ $time_now }}" autocomplete="off"
-                            class="form-control custom-datepicker" maxlength="5" onClick="this.select();">
+                        <input type="time" name="time" id="timepicker" placeholder="{{ $time_now }}" autocomplete="off" class="form-control custom-datepicker" maxlength="5" onClick="this.select();">
                         <label for="datepicker" style="color: #92999F;">Hora da Disputa</label>
                     </div>
                 </div>
 
                 <div class="col-12 mb-4">
                     <div class="input-group">
-                        <textarea class="form-control" name="obs" placeholder="OBSERVAÇÕES" rows="8"
-                            autocomplete="off"></textarea>
+                        <textarea class="form-control" name="obs" placeholder="OBSERVAÇÕES" rows="8" autocomplete="off"></textarea>
                     </div>
                 </div>
                 <div class="col-12 mb-4">
-                    <div class="form-check">
+                    <div class="form-check form-switch">
                         <input class="form-check-input" name="budget" type="checkbox" value="1" id="isBudget">
                         <label class="form-check-label" for="isBudget">
                             ORÇAMENTO
@@ -104,11 +97,10 @@
                 </div>
                 <div class="col-12 mb-4">
                     <div class="" id="hashtags-container">
-                        <input type="text" id="hashtags" autocomplete="off" class="form-control" placeholder="TAG's"
-                            maxlength="30">
-                            <small>
-                        <p class="my-2">Digite a TAG e pressione <kbd>TAB</kbd> ou <kbd>ENTER</kbd> para inserir.</p>
-                    </small>
+                        <input type="text" id="hashtags" autocomplete="off" class="form-control" placeholder="TAG's" maxlength="30">
+                        <small>
+                            <p class="my-2">Digite a TAG e pressione <kbd>TAB</kbd> ou <kbd>ENTER</kbd> para inserir.</p>
+                        </small>
                         <div class="tag-container mt-3"></div>
                     </div>
                     <input type="hidden" name="tags" id="userTags" value="">
