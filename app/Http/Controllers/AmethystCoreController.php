@@ -171,7 +171,7 @@ class AmethystCoreController extends Controller
         $preg->save();
 
         $redirect_to = ($preg->budget == 1) ? 'budgets' : 'biddings';
-        return redirect($redirect_to.'/list')->with('alert', 'Registro alterado com sucesso!')->with('type', 'success')->with('aicon', 'edit-3');
+        return redirect('list/'. $redirect_to)->with('alert', 'Registro alterado com sucesso!')->with('type', 'success')->with('aicon', 'edit-3');
     }
 
     public function preg_delete($id)
@@ -179,7 +179,7 @@ class AmethystCoreController extends Controller
         $preg = Preg::where('id', $id)->first();
         $preg->delete();
         $redirect_to = ($preg->budget == 1) ? 'budgets' : 'biddings';
-        return redirect($redirect_to.'/list')->with('alert', 'Registro deletado com sucesso!')->with('type', 'danger')->with('aicon', 'trash');
+        return redirect('list/'. $redirect_to)->with('alert', 'Registro deletado com sucesso!')->with('type', 'danger')->with('aicon', 'trash');
     }
 
     //#region

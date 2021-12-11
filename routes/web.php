@@ -63,8 +63,11 @@ Route::prefix('login')->group(function () {
 
 Route::get('/logout', [AmethystUserCore::class, 'logout']);
 
+Route::prefix('config/user')->group(function () {
+    Route::get('/edit/{id}', [AmethystUserCore::class, 'edit_user']);
+});
+
 Route::prefix('user')->middleware('auth')->group(function () {
     Route::get('/delete/{id}', [AmethystUserCore::class, 'delete_user']);
-    Route::get('/edit/{id}', [AmethystUserCore::class, 'edit_user']);
     Route::post('/edit/save', [AmethystUserCore::class, 'save_user']);
 });

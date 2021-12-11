@@ -48,7 +48,7 @@
                                     <td>{{ $ranks[$user->rank] }}</td>
                                     <td>
                                         @if( $user->primary )<a href="/change/password/" class="link-dark me-3" title="Editar"><i data-feather="lock"></i></a>@endif
-                                        @if( !$user->primary )<a href="/user/edit/{{ $user->id }}" class="link-dark me-3" title="Editar"><i data-feather="edit"></i></a>@endif
+                                        @if( !$user->primary )<a href="/config/user/edit/{{ $user->id }}" class="link-dark me-3" title="Editar"><i data-feather="edit"></i></a>@endif
                                         @if( !$user->primary )<a href="/user/delete/{{ $user->id }}" class="link-danger me-3" title="Excluir" onClick="return confirm('Deseja realmente deletar o registro?')"><i data-feather="trash"></i></a> @endif
                                     </td>
                                 </tr>

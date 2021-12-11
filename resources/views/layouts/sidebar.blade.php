@@ -71,7 +71,7 @@
     <div class="nav-item pb-3 ps-3">
         <div class="dropdown">
             <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="{{ auth()->user()->avatar_url }}" alt="" width="32" height="32" class="rounded-circle me-2 user-avatar">
+                <div class="avatar-mini rounded-circle bg-light me-3" style="background: url({{ auth()->user()->avatar_url }});"></div>
                 <strong>{{ auth()->user()->first_name }}</strong>
             </a>
             <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">

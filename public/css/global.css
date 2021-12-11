@@ -99,3 +99,21 @@
 input[type="time"]::-webkit-calendar-picker-indicator {
     display: none;
 }
+
+.avatar{
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    background-repeat: none !important;
+    background-position: center !important;
+    background-size: cover !important;
+}
+
+.avatar-mini{
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    background-repeat: none !important;
+    background-position: center !important;
+    background-size: cover !important;
+}
