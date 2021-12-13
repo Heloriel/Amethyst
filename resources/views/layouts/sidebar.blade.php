@@ -50,12 +50,14 @@
                                 SITUAÇÕES
                             </a>
                         </li>
+                        @if (auth()->user()->rank >= 3)
                         <li class="nav-item rounded-pill small p-0 mb-1 {{ str_contains(url()->current(), 'portal') ? 'submenu-active' : '' }}">
                             <a href="/config/portal" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'portal') ? 'link-dark' : 'link-secondary' }}">
                                 <i data-feather="chevron-right" class="me-2"></i>
                                 PORTAIS
                             </a>
                         </li>
+                        @endif
                         <li class="nav-item rounded-pill small p-0 mb-1 {{ str_contains(url()->current(), 'user') ? 'submenu-active' : '' }}">
                             <a href="/config/user/list" class="nav-link p-1 rounded-0 d-flex {{ str_contains(url()->current(), 'user') ? 'link-dark' : 'link-secondary' }}">
                                 <i data-feather="chevron-right" class="me-2"></i>

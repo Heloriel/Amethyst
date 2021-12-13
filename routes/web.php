@@ -41,17 +41,17 @@ Route::get('/delete/{id}', [AmethystCoreController::class, 'preg_delete'])->midd
 /* ==================================[ ADMIN CORE CONTROLLER ]==================================== */
 
 Route::prefix('config')->middleware('auth')->group(function () {
-    Route::get('/general', [AmethystAdminCore::class, 'general_config']);
+    Route::get('/general', [AmethystAdminCore::class, 'general_config'])->middleware('isOp');
     Route::get('/', function(){ return redirect('config/general'); });
-    Route::get('/status', [AmethystAdminCore::class, 'status_config']);
-    Route::post('/status/save', [AmethystAdminCore::class, 'save_status']);
-    Route::get('/status/create', [AmethystAdminCore::class, 'create_status']);
-    Route::get('/status/delete/{id}', [AmethystAdminCore::class, 'delete_status']);
-    Route::get('/portal', [AmethystAdminCore::class, 'portal_config']);
-    Route::post('/portal/save', [AmethystAdminCore::class, 'save_portal']);
-    Route::get('/portal/create', [AmethystAdminCore::class, 'create_portal']);
-    Route::get('/portal/delete/{id}', [AmethystAdminCore::class, 'delete_portal']);
-    Route::get('/user/list', [AmethystAdminCore::class, 'user_list_view']);
+    Route::get('/status', [AmethystAdminCore::class, 'status_config'])->middleware('isOp');
+    Route::post('/status/save', [AmethystAdminCore::class, 'save_status'])->middleware('isOp');
+    Route::get('/status/create', [AmethystAdminCore::class, 'create_status'])->middleware('isOp');
+    Route::get('/status/delete/{id}', [AmethystAdminCore::class, 'delete_status'])->middleware('isOp');
+    Route::get('/portal', [AmethystAdminCore::class, 'portal_config'])->middleware('isAdmin');
+    Route::post('/portal/save', [AmethystAdminCore::class, 'save_portal'])->middleware('isAdmin');
+    Route::get('/portal/create', [AmethystAdminCore::class, 'create_portal'])->middleware('isAdmin');
+    Route::get('/portal/delete/{id}', [AmethystAdminCore::class, 'delete_portal'])->middleware('isAdmin');
+    Route::get('/user/list', [AmethystAdminCore::class, 'user_list_view'])->middleware('isOp');
 });
 
 /* ==================================[ USER CORE CONTROLLER ]==================================== */
@@ -63,11 +63,11 @@ Route::prefix('login')->group(function () {
 
 Route::get('/logout', [AmethystUserCore::class, 'logout']);
 
-Route::prefix('config/user')->group(function () {
+Route::prefix('config/user')->middleware('auth')->middleware('isOp')->group(function () {
     Route::get('/edit/{id}', [AmethystUserCore::class, 'edit_user']);
 });
 
-Route::prefix('user')->middleware('auth')->group(function () {
+Route::prefix('user')->middleware('auth')->middleware('isOp')->group(function () {
     Route::get('/delete/{id}', [AmethystUserCore::class, 'delete_user']);
     Route::post('/edit/save', [AmethystUserCore::class, 'save_user']);
 });
