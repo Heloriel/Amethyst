@@ -12,6 +12,12 @@ use App\Models\User;
 class AmethystUserCore extends Controller
 {
     private $user_rank;
+    private $all_ranks;
+
+    public function __construct()
+    {
+        $this->all_ranks = Rank::all();
+    }
 
     public function view_login()
     {
@@ -61,8 +67,14 @@ class AmethystUserCore extends Controller
     public function edit_user($id)
     {
         $user = User::where('id', $id)->first();
+
+        if($user->primary){
+            return redirect('/config/user/list')->with('alert', 'O usuário principal não pode ser alterado!')->with('type', 'danger')->with('aicon', 'alert-triangle');
+        }
+
         return view('config.user_edit', [
-            'user' => $user
+            'user' => $user,
+            'ranks' => $this->all_ranks,
         ]);
     }
 

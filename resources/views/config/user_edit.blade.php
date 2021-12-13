@@ -16,37 +16,40 @@
                     <div class="avatar rounded-circle bg-light m-auto" style="background: url({{ $user->avatar_url }});"></div>
                 </div>
             </div>
-            <div class="row justify-content-center mb-5">
+            <div class="row justify-content-center mb-3">
                 <div class="col-12 col-md-3">
-                    <div class="form-floating">
-                        <input class="form-control" placeholder="Nome" type="text" name="first_name" id="firstname">
-                        <label for="firstname">Nome</label>
+                    <label for="firstname">Nome:</label>
+                    <div class="input-group">
+                        <input class="form-control" value="{{ $user->first_name }}" placeholder="Nome" type="text" name="first_name" id="firstname">
                     </div>
                 </div>
                 <div class="col-12 col-md-3">
-                    <div class="form-floating">
-                        <input class="form-control" placeholder="Sobrenome" type="text" name="last_name" id="lastname">
-                        <label for="lastname">Sobrenome</label>
+                    <label for="lastname">Sobrenome:</label>
+                    <div class="input-group">
+                        <input class="form-control" value="{{ $user->last_name }}" placeholder="Sobrenome" type="text" name="last_name" id="lastname">
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center mb-5">
+            <div class="row justify-content-center mb-3">
                 <div class="col-12 col-md-6">
-                    <input class="form-control" type="text" name="last_name" id="">
+                    <label for="email">E-Mail:</label>
+                    <input class="form-control" value="{{$user->email}}" type="text" name="email" id="email">
                 </div>
             </div>
-            <div class="row justify-content-center mb-5">
+            <div class="row justify-content-center mb-3">
                 <div class="col-12 col-md-3">
+                    <label for="username">Usuário:</label>
                     <div class="input-group">
                         <span class="input-group-text">@</span>
-                        <input class="form-control " type="text" name="last_name" id="">
+                        <input class="form-control " value="{{$user->username}}" type="text" name="username" id="username">
                     </div>
                 </div>
                 <div class="col-12 col-md-3">
-                    <select name="" id="" class="form-select">
-                        <option value="1">Admin</option>
-                        <option value="2">Op</option>
-                        <option value="3">Reader</option>
+                    <label for="role">Função:</label>
+                    <select name="rank" id="" class="form-select" id="role">
+                    @foreach ( $ranks as $rank )
+                        <option value="{{$rank->id}}" @if($rank->id == $user->rank) selected @endif>{{$rank->name}}</option>
+                    @endforeach
                     </select>
                 </div>
             </div>

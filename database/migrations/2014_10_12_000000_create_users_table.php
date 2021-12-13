@@ -61,13 +61,13 @@ class CreateUsersTable extends Migration
             'primary' => false
         ));
         DB::table('users')->insert(array(
-            'first_name' => 'Orácio',
-            'last_name' => 'Fritzo',
+            'first_name' => 'Jimmy',
+            'last_name' => 'Doe',
             'username' => 'reader',
             'email' => 'reader@admin.com',
             'password' => bcrypt('reader'),
             'rank' => 1,
-            'avatar_url' => '/img/avatar/oraciofritzo.jpg',
+            'avatar_url' => '/img/avatar/jimmy.jpg',
             'primary' => false
         ));
     }
