@@ -119,7 +119,7 @@
         </div>
         <div class="col-12 d-flex justify-content-between align-items-center mb-5" id="actions">
             <div class="col-6">
-                <a class="btn btn-outline-danger rounded-pill d-inline-flex justify-content-between align-items-center" href="/{{ $preg->budget ? 'budgets' : 'biddings' }}/list/" onClick="return confirm('Deseja realmente cancelar a edição?')">
+                <a class="btn btn-outline-danger rounded-pill d-inline-flex justify-content-between align-items-center" href="/list/{{ $preg->budget ? 'budgets' : 'biddings' }}/" onClick="return confirm('Deseja realmente cancelar a edição?')">
                     CANCELAR <i data-feather="x-circle" class="ms-2"></i>
                 </a>
             </div>
