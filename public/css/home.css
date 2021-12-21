@@ -2,3 +2,7 @@
     font-size: 4rem;
     font-family: 'Poppins', sans-serif;
 }
+
+.home-card{
+    min-width: 227px;
+}

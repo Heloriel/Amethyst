@@ -11,7 +11,7 @@
 
     <div class="container">
         <div class="row mb-1">
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-4 col-sm-12 home-card">
                 <div class="card text-white bg-primary mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Disputas Hoje:</h5>
@@ -26,7 +26,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-4 col-sm-12 home-card">
                 <div class="card text-white bg-success mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Disputas Futuras:</h5>
@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-4 col-sm-12 home-card">
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Novas Licitações:</h5>
