@@ -10,7 +10,7 @@
 
 
     <div class="container">
-        <div class="row">
+        <div class="row mb-1">
             <div class="col-md-4 col-sm-12">
                 <div class="card text-white bg-primary mb-3">
                     <div class="card-body">
